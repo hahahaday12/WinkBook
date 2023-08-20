@@ -12,6 +12,13 @@ const Footer = () => {
   const Jinyoung = 'https://github.com/jinyoungpark231';
   const Twinkle = 'https://github.com/KDT5TeamWink';
 
+  const memberInfo = {
+    Donguk:'서동욱',
+    Haeun:'하은',
+    Saeyeon:'세연',
+    Daehyun:'대연',
+    Jinyoung:'진영'
+  }
 
   return (
     <footer>
@@ -39,7 +46,7 @@ const Footer = () => {
                 window.open(Donguk);
               }}
             />
-            <p>서동욱</p>
+            <p>{memberInfo.Donguk}</p>
           </div>
           <div className="wrap">
             <FontAwesomeIcon
@@ -49,7 +56,7 @@ const Footer = () => {
                 window.open(Haeun);
               }}
             />
-            <p>김하은</p>
+            <p>{memberInfo.Haeun}</p>
           </div>
           <div className="wrap">
             <FontAwesomeIcon
@@ -59,7 +66,7 @@ const Footer = () => {
                 window.open(Saeyeon);
               }}
             />
-            <p>김세연</p>
+            <p>{memberInfo.Saeyeon}</p>
           </div>
           <div className="wrap">
             <FontAwesomeIcon
@@ -69,7 +76,7 @@ const Footer = () => {
                 window.open(Daehyun);
               }}
             />
-            <p>문대현</p>
+            <p>{memberInfo.Daehyun}</p>
           </div>
           <div className="wrap">
             <FontAwesomeIcon
@@ -80,7 +87,7 @@ const Footer = () => {
                 window.open(Jinyoung);
               }}
             />
-            <p>박진영</p>
+            <p>{memberInfo.Jinyoung}</p>
           </div>
         </div>
         
