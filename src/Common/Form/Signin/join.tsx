@@ -1,31 +1,37 @@
-import { FormEvent, useState, useCallback } from "react";
+import { FormEvent, useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PwCheck, emailCheck } from "../Validation ";
 import { JoinForm } from "@/Apis/register";
-import "./join.scss";
 import Swal from "sweetalert2";
+import "./join.scss";
 
 function Join() {
   const navigate = useNavigate();
 
   // 이름 , 비밀번호, 이메일 , 비밀번호 확인
-  const [email, setUserEmail] = useState("");
-  const [displayName, setdDisplayName] = useState("");
-  const [password, setUserPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setUserEmail] = useState<string>("");
+  const [displayName, setdDisplayName] = useState<string>("");
+  const [password, setUserPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [profileImgBase64, setProfileImgBase64] = useState<string>("");
 
   //비밀번호 유효성 검사
-  const [isName, setIsName] = useState(false);
-  const [isEmail, setIsEmail] = useState(false);
-  const [isPassword, setIsPassword] = useState(false);
-  const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
+  const [isName, setIsName] = useState<boolean>(false);
+  const [isEmail, setIsEmail] = useState<boolean>(false);
+  const [isPassword, setIsPassword] = useState<boolean>(false);
+  const [isPasswordConfirm, setIsPasswordConfirm] = useState<boolean>(false);
 
   //오류 메세지 저장
-  const [nameMessage, setNameMessage] = useState("");
-  const [emailMessage, setEmailMessage] = useState("");
-  const [passwordMessage, setPasswordMessage] = useState("");
-  const [passwordConfirmMessage, setPasswordConfirmMessage] = useState("");
+  const [nameMessage, setNameMessage] = useState<string>("");
+  const [emailMessage, setEmailMessage] = useState<string>("");
+  const [passwordMessage, setPasswordMessage] = useState<string>("");
+  const [passwordConfirmMessage, setPasswordConfirmMessage] = useState<string>("");
+
+  useEffect(() => {
+    if (confirmPassword) {
+      onChangePasswordConfirm(password, confirmPassword, setPasswordConfirmMessage, setIsPasswordConfirm );
+    }
+  }, [password, confirmPassword]);
 
   const onChangeEmail = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,10 +76,10 @@ function Join() {
   );
 
   const onChangePasswordConfirm = (
-    password: any,
-    confirmPassword: any,
-    setPasswordConfirmMessage: any,
-    setIsPasswordConfirm: any
+    password: string,
+    confirmPassword: string,
+    setPasswordConfirmMessage: React.Dispatch<React.SetStateAction<string>>,
+    setIsPasswordConfirm: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     if (password === confirmPassword) {
       setPasswordConfirmMessage("비밀번호를 똑같이 입력했어요 : )");
