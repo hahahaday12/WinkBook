@@ -1,8 +1,8 @@
 import Header from "@/Common/Layout/Header/header";
 import Footer from "@/Common/Layout/Footer/footer";
 import MainPage from "@/Components/Views/MainPage/MainPage";
-import Join from "@/Common/Form/Signin/join";
-import Login from "@/Common/Form/Login/login";
+import Join from "@/Common/Form/Signup/signup";
+import Login from "@/Common/Form/Signin/signin";
 import CartPage from "@/Components/Views/CartPage/CartPage";
 import MyPage from "@/Components/Views/MyPage/MyPage";
 import PrivatePage from "./privateRoute";
@@ -15,40 +15,39 @@ import { Routes, BrowserRouter, Route, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <Header />
+    <Header />
       <Outlet />
-      <Footer />
-      </>
+    <Footer />
+    </>
   );
 };
 
 function RoutesPage() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<MainPage />} />
-            <Route path="/join" element={<Join />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/detail/:productNo" element={<DetailPage />} />
-            <Route path="/search/:keyword" element={<SearchPage />} />
-            <Route
-              path="/cart"
-              element={<PrivatePage component={<CartPage />} status={""} />}
-            />
-            <Route
-              path="/mypage"
-              element={<PrivatePage component={<MyPage />} status={""} />}
-            />
-            <Route
-              path="/mypage/userinfo"
-              element={<PrivatePage component={<UserInfo />} status={""} />}
-            />
-            {/* <Route path="/mypage" element={<MyPage/>}/> */}
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/detail/:productNo" element={<DetailPage />} />
+          <Route path="/search/:keyword" element={<SearchPage />} />
+          <Route
+            path="/cart"
+            element={<PrivatePage component={<CartPage />} status={""} />}
+          />
+          <Route
+            path="/mypage"
+            element={<PrivatePage component={<MyPage />} status={""} />}
+          />
+          <Route
+            path="/mypage/userinfo"
+            element={<PrivatePage component={<UserInfo />} status={""} />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
