@@ -137,7 +137,7 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 ## 🎈 작업 진행 
 
-### 1) 노션
+### 1) Notion
 -> 그라운드 룰, 커밋 컨벤션, api 문서 등 프로젝트에서 필요한것들을 기록해두었습니다. 
 
 #### ✅ Api 문서 정리 
@@ -146,13 +146,13 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 #### ✅ git commit 컨벤션 정리  
  <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/e9f0c03c-afea-4a06-97cd-729542d797f3">
  
-### 2) 깃허브
-#### 깃허브 전략 Github Flow
-->  각자의 브랜치에서 작업한 내용을 특정 브랜치로 머지 <br/>
--> merge & pull은 그룹원들이 모두 모였을 때만 함께 진행 , 본인 판단 하에 merge 할 내용이 없다면 pull만 진행<br/>
--> conflict 발생 시 merge 당사자가 직접 해결<br/>
-
-
+### 2) Github
+#### 깃허브 전략 Github Flow<br/>
+-> develop branch 생성.<br/>
+-> develop branch 에서 각자 이름의 branch 생성.<br/> 
+-> 각자 branch 에서 기능 개발이 완료되면 develop branch 로  PR 생성.<br/> 
+-> 깃허브 담당자가 올라온 Pull request 확인후 develop branch 로 merge.<br/>
+-> 모든 기능 구현 완료후 최종적으로  develop branch 를 master branch 로 merge.<br/>
 
 <img width="350" height="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/7ae366b4-a077-4d3b-9609-64296bdd52ca">
 
@@ -170,7 +170,7 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 -----
 
-## 프로젝트 주요 기능
+## 📌 프로젝트 주요 기능
 
 ### 메인
 
@@ -200,13 +200,19 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 - 전체 결제 내역
 
 -----
-## 프로젝트 구현 담당 기능 설명  
-- 로그인 
-- 회원가입
-- 상세페이지
-- 장바구니
-- 결제페이지
-- 장바구니
+## 🌟 프로젝트 구현 담당 기능 설명  
+1) 로그인<br/>
+-> 
+2) 회원가입<br/>
+-> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다. <br/>
+-> 가입정보를 기입을 할때, 정해진 조건에 맞지 않으면 아래 오류내용을 출력하게끔 각각의 errorMessage 를 적어두었습니다.<br/>
+-> 
+<img width="494" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3ca8e1fc-187f-41f4-a160-b84c42654354"><br/>
+   
+4) 상세페이지
+5) 장바구니
+6) 결제페이지
+7) 장바구니
 
 
 
