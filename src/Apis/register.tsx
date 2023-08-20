@@ -19,14 +19,14 @@ export const JoinForm = async (
     email,
     displayName,
     password,
-    profileImgBase64,
-  });
+    profileImgBase64,},
+    {headers});
   return res.data;
 };
 
 export const LoginForm = async (email: string, password: string) => {
   const LOGINURL = '/login';
-  const res = await baseInstance.post(LOGINURL, { email, password });
+  const res = await baseInstance.post(LOGINURL, { email, password },{headers});
   return res.data;
 };
 
