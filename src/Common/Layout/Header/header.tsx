@@ -40,7 +40,7 @@ function Header() {
     Swal.fire('로그아웃 되었습니다!', '다음에 또 만나요!', 'success');
     navigate('/');
     })
-    .catch((error: string) => {
+    .catch((error) => {
       console.log('Logout failed:', error);
       if (error.response && error.response.status === 401) {
         // 상태 코드가 401인 경우 토큰 제거
