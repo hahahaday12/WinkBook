@@ -201,12 +201,39 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 -----
 ## 🌟 프로젝트 구현 담당 기능 설명  
-1) 로그인<br/>
--> 
-2) 회원가입<br/>
+
+### 1) 로그인<br/>
+-> 회원가입한 정보로 로그인 정보를 입력하게 되고 , 입력후 등록 하게 되면 Signin 이라는 함수가 실행되고, 만약 입력창에 지정한 조건이 입력되지 않으면 가입이 되지않게 return false로 지정해 두었습니다.<br/>
+조건에 맞게 입력이 되면 서버에 로그인 정보를 보내게 되고 , 서버에서 token 값을 받아 localStorage 에 저장하도록 구현 하였습니다.<br/>
+<img width="557" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3d946aeb-22fa-414c-a162-ed06ed243ab9">
+
+#### 🌟최종 로그인 구현모습
+
+
+
+### 2) 회원가입<br/>
 -> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다. <br/>
--> 가입정보를 기입을 할때, 정해진 조건에 맞지 않으면 아래 오류내용을 출력하게끔 각각의 errorMessage 를 적어두었습니다.<br/>
+-> 비밀번호 유효성 검사에 대한 상태값을 저장할수 있도록 isEmail 의 state 를 생성했고, 상태에 따른 오류 메세지를 저장할수 있는 오류 상태의 emailMessage 의 state 를 생성 하였습니다. <br/>
+이후, 조건식으로 이메일 유효성 검사를 하여 지정된 조건식에 맞으면 그에 따른 상태 메세지를 setIsEmail안에 저장해두고 , <br/> 상태값을 setEmailMessage 안에 저장해두었습니다. 따라 사용자가 이메일을 입력중에 있을때
+조건식에 맞지 않으면 아래에 해당 상태값에 대한 오류 메세지가 출력됩니다. <br/>
+
+#### 구현코드
+<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b11db4a9-4d46-4a54-8df9-216a74b9f929">
+
 <img width="494" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3ca8e1fc-187f-41f4-a160-b84c42654354"><br/>
+
+-> 회원정보를 입력후 등록 버튼을 누르면 type 이 submit 인 {signUp} 이라는 함수가 실행되고 조건식으로 적혀지지 않은 기입 란이 존재하면 return false로 진행을 멈춥니다. <br/>
+가입 조건이 맞으면 서버로 입력정보들을 전달하고 token값을 받아와 성공 여부의 알림이 뜹니다.<br/> 예외 처리로는 서버에서 오는 상태값에 따라 알림, 콘솔 창에 나타나도록 구현하였습니다. <br/>
+
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/54ebdcf8-f650-467a-a98e-ad751ae60a6f"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f621a320-dcd6-4f94-8639-01967bea779e"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/dbe4cbf7-aaa1-4a8e-905f-7c7a1deb5de6"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d98dfbcc-3840-4065-a333-2d34da7195f3"><br/>
+
+#### 🌟최종 회원가입 구현모습
+<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/beed2a55-477b-482f-bece-16c642f63671">
+
+
    
 4) 상세페이지
 5) 장바구니
