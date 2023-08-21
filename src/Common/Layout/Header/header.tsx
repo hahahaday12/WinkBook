@@ -71,7 +71,9 @@ function Header() {
         console.error(error);
       }
     };
-    fetchUserData();
+    if (token) {
+      fetchUserData();
+    }
   }, []);
 
   // Enter 입력이 되면 클릭 이벤트 실행
