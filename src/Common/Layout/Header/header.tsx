@@ -42,6 +42,12 @@ function Header() {
     })
     .catch((error: string) => {
       console.log('Logout failed:', error);
+      if (error.response && error.response.status === 401) {
+        // 상태 코드가 401인 경우 토큰 제거
+        localStorage.removeItem('token');
+        console.log('토큰이 제거되었습니다.');
+        navigate('/')
+      }
     });
   };
 
