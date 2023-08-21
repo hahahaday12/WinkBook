@@ -25,7 +25,7 @@ function Header() {
   const [filteredItems, setFilteredItems] = useState([]);
   const [product, setProductInfo] = useState([]);
   const [showInputButton, setShowInputButton] = useState(false);
-  const [userIsAuthenticated, setUserIsAuthenticated] = useState<boolean | null>(null);
+
   const navigate = useNavigate();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -56,12 +56,12 @@ function Header() {
     setShowInputButton(false);
   };
 
+  const token = localStorage.getItem('token');
   // 처음에 token 값을 가져오고, 이미지가 등록되지 않았으면 설정된 이미지 노출
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const userData = await TokenMe();
-        setUserIsAuthenticated(userData);
         setUser((prevUser) => ({
           ...prevUser,
           displayName: userData.displayName,
@@ -187,8 +187,8 @@ function Header() {
           <Link className="Header-box__text" to="/mypage">
             {categoryText.mypage}
           </Link>
-          {userIsAuthenticated !== null ? (
-            userIsAuthenticated ? (
+       
+            {token ? (
             <div className="Header-box__text">
               <div className="Header-box__logout" onClick={logoutHandler}>
                 {categoryText.logout}
@@ -206,8 +206,8 @@ function Header() {
               <p>{categoryText.signin}</p>
             </Link>
             </>
-            )
-          ) : null}
+            )}
+         
         </div>  
       </div>
     </header>
