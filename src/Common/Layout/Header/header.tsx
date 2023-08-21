@@ -59,9 +59,11 @@ function Header() {
   const token = localStorage.getItem('token');
   // 처음에 token 값을 가져오고, 이미지가 등록되지 않았으면 설정된 이미지 노출
   useEffect(() => {
-    const fetchUserData = async () => {
+    const authenticate = async () => {
       try {
         const userData = await TokenMe();
+
+        // 사용자 정보를 업데이트하기 전에 profileImg가 존재하지 않을 경우에만 기본 프로필 이미지 URL을 사용
         setUser((prevUser) => ({
           ...prevUser,
           displayName: userData.displayName,
@@ -72,9 +74,9 @@ function Header() {
       }
     };
     if (token) {
-      fetchUserData();
+      authenticate();
     }
-  }, []);
+  }, [token]);
 
   // Enter 입력이 되면 클릭 이벤트 실행
   const OnKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
