@@ -202,10 +202,10 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 -----
 ## 🌟 프로젝트 구현 담당 기능 설명  
 
-### 1) 로그인<br/>
+### 🎈 1) 로그인<br/>
 -> 회원가입한 정보로 로그인 정보를 입력하게 되고 , 입력후 등록 하게 되면 Signin 이라는 함수가 실행되고, 만약 입력창에 지정한 조건이 입력되지 않으면 가입이 되지않게 return false로 지정해 두었습니다.<br/>
 조건에 맞게 입력이 되면 서버에 로그인 정보를 보내게 되고 , 서버에서 token 값을 받아 localStorage 에 저장하도록 구현 하였습니다.<br/>
-token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, 접근권한 부여를 하도록 구현하였습니다. 
+<b>token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, 접근권한 부여를 하도록 구현하였습니다.</b>
 #### 구현코드
 <img width="557" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3d946aeb-22fa-414c-a162-ed06ed243ab9">
 
@@ -213,8 +213,8 @@ token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, �
 
 
 
-### 2) 회원가입<br/>
--> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다. <br/>
+### 🎈2) 회원가입<br/>
+-> <b> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다.</b> <br/>
 -> 비밀번호 유효성 검사에 대한 상태값을 저장할수 있도록 isEmail 의 state 를 생성했고, 상태에 따른 오류 메세지를 저장할수 있는 오류 상태의 emailMessage 의 state 를 생성 하였습니다. <br/>
 이후, 조건식으로 이메일 유효성 검사를 하여 지정된 조건식에 맞으면 그에 따른 상태 메세지를 setIsEmail안에 저장해두고 , 상태값을 setEmailMessage 안에 저장해두었습니다. <br/> 
 따라 사용자가 이메일을 입력중에 있을때 조건식에 맞지 않으면 아래에 해당 상태값에 대한 오류 메세지가 출력됩니다. <br/>
@@ -232,32 +232,31 @@ token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, �
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/dbe4cbf7-aaa1-4a8e-905f-7c7a1deb5de6"><br/>
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d98dfbcc-3840-4065-a333-2d34da7195f3"><br/>
 
-### 🌟최종 회원가입 구현모습
+#### 🌟최종 회원가입 구현모습
 <img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/beed2a55-477b-482f-bece-16c642f63671">
 
-#### 3) 상세페이지
+### 🎈3) 상세페이지
 -> data라는 변수 안에 제품을 조회하는 함수 getList 를 실행후 , productList 제품리스트 정보의, product_no 제품 숫자를 입력받아 해당 아이템의 정보를 가져오게끔 구현하였습니다.<br/>
-< Link > 태그를 사용하여 각 아이템에 대한 링크를 생성후 , 경로가 .product_no 값의 따라 생성되게 구현하였습니다.   
-
+< Link > 태그를 사용하여 각 아이템에 대한 링크를 생성후 , 경로가 .product_no 값의 따라 생성되게 구현하였습니다.<br/>   
 #### 구현코드<br/>
 <img width="424" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/32332854-df4f-436f-bc2f-56d0abae90d6"><br/>
 
-<br/>
-->  useParams 훅을 사용하여 현재 경로의 파라미터 값을 가져오고, 해당 값으로 productNo 변수를 초기화 하여 getDetails함수 에서 productNo값을 활용하여  해당 상품에 대한 세부 정보를 가져오게끔 구현하였습니다.<br/>
+-> <b> useParams 훅을 사용하여 현재 경로의 파라미터 값을 가져오고, 해당 값으로 productNo 변수를 초기화 하여 getDetails함수 에서 productNo값을 활용하여  해당 상품에 대한 세부 정보를 가져오게끔 구현하였습니다. </b> <br/>
 
-#### 구현코드.<br/>
+#### 구현코드<br/>
 <img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f52297d2-6d69-4afa-9414-c9fccfc717d0"><br/>
 
-### 🌟최종 상세페이지 구현모습
+#### 🌟최종 상세페이지 구현모습
 <img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ddc25cb9-1ae2-42c7-acff-6388eaebc410"><br/>
 
 
+### 🎈4)장바구니<br/>
+-> 구매, 대여 버튼 클릭시 detail에 담아져 있는 데이터와, 추가할 property 값을 매개 변수로 넘겨주었습니다. <br/>
+<b>장바구니에 담을때, 중복된 상품을 제거 하기위해 javascript의 Set 객체를 사용하고,  Spread Oprator 를 활용하여 중복 제거된 값이 배열로 변환되게 구현하였습니다.<br/>
+JSON 형태의 문자열로 변환하여 로컬 스토리지에 'cart' 키로 저장하였고 이를 통해 장바구니 데이터가 유지 됩니다. </b> 그후 상태값의 alert 창을 띄어 주었습니다. <br/>
+또한, 예외처리로 상품 넘버와 클릭한 넘버가 같으면 중복되었다는 알림창이 뜨도록 구현 하였습니다. 
 
-
-#### 장바구니
--> 
--> 
-
+#### 구현코드<br/>
 
 
 
