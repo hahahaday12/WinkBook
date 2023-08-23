@@ -205,6 +205,7 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 ### 1) 로그인<br/>
 -> 회원가입한 정보로 로그인 정보를 입력하게 되고 , 입력후 등록 하게 되면 Signin 이라는 함수가 실행되고, 만약 입력창에 지정한 조건이 입력되지 않으면 가입이 되지않게 return false로 지정해 두었습니다.<br/>
 조건에 맞게 입력이 되면 서버에 로그인 정보를 보내게 되고 , 서버에서 token 값을 받아 localStorage 에 저장하도록 구현 하였습니다.<br/>
+token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, 접근권한 부여를 하도록 구현하였습니다. 
 <img width="557" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3d946aeb-22fa-414c-a162-ed06ed243ab9">
 
 #### 🌟최종 로그인 구현모습
@@ -224,18 +225,28 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 -> 회원정보를 입력후 등록 버튼을 누르면 type 이 submit 인 {signUp} 이라는 함수가 실행되고 조건식으로 적혀지지 않은 기입 란이 존재하면 return false로 진행을 멈춥니다. <br/>
 가입 조건이 맞으면 서버로 입력정보들을 전달하고 token값을 받아와 성공 여부의 알림이 뜹니다.<br/> 예외 처리로는 서버에서 오는 상태값에 따라 알림, 콘솔 창에 나타나도록 구현하였습니다. <br/>
-
+#### 구현코드
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/54ebdcf8-f650-467a-a98e-ad751ae60a6f"><br/>
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f621a320-dcd6-4f94-8639-01967bea779e"><br/>
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/dbe4cbf7-aaa1-4a8e-905f-7c7a1deb5de6"><br/>
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d98dfbcc-3840-4065-a333-2d34da7195f3"><br/>
 
-#### 🌟최종 회원가입 구현모습
+### 🌟최종 회원가입 구현모습
 <img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/beed2a55-477b-482f-bece-16c642f63671">
 
+#### 3) 상세페이지
+-> data라는 변수 안에 제품을 조회하는 함수 getList 를 실행후 , productList 제품리스트 정보의, product_no 제품 숫자를 입력받아 해당 아이템의 정보를 가져오게끔 구현하였습니다.<br/>
+< Link > 태그를 사용하여 각 아이템에 대한 링크를 생성후 , 경로가 .product_no 값의 따라 생성되게 구현하였습니다.   
 
-   
-4) 상세페이지
+#### 구현코드
+<img width="424" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/32332854-df4f-436f-bc2f-56d0abae90d6">
+
+-> 
+
+
+
+
+
 5) 장바구니
 6) 결제페이지
 7) 장바구니
