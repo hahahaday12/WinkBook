@@ -249,11 +249,20 @@ token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, �
 <img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f52297d2-6d69-4afa-9414-c9fccfc717d0"><br/>
 
 ### 🌟최종 상세페이지 구현모습
+<img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ddc25cb9-1ae2-42c7-acff-6388eaebc410"><br/>
 
 
 
 
 #### 장바구니
+-> 
+-> 
+
+
+
+
+
+
 #### 결제페이지
 
 
@@ -261,20 +270,20 @@ token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, �
 
 -----
 ##  구현중 마주친 문제점 과 해결방안  
-1. 서로 다른 도메인으로 인한 cors 오류  ->
-2. vite.config.ts 에서 proxy 설정으로 해결 <br/>
-3. 카페24에서 제품조회 api를 이용하여 상세 페이지를 나타내고있으며  구매, 대여 버튼 클릭에 따라 장바구니에서도 다르게 담겨야함.<br/>
+1. 서로 다른 도메인으로 인한 cors 오류  -> vite.config.ts 에서 proxy 설정으로 해결 <br/>
+2. 카페24에서 제품조회 api를 이용하여 상세 페이지를 나타내고있으며  구매, 대여 버튼 클릭에 따라 장바구니에서도 다르게 담겨야함.<br/>
 -> 각각 클릭 할때 제품 조회해 오는 api의 데이터에 key값,프로퍼티를 추가 <br/> 책구매하기 버튼을 클릭시 detail의 정보에 프로퍼티 gubun 값을 추가. 따라 책 구매하기 버튼 클릭시 gubun 값이 buy 로 추가된다.  장바구니 담기의 gubun 값은 rent 로 추가된다.<br/>
-4. cafe24에서 어드민 권한을 어떻게 받을 수 있을까? -> 어드민 페이지 접속 하기 위해선 token이 필요한데, token에는 code값이 필요하다.<br/>
+3. cafe24에서 어드민 권한을 어떻게 받을 수 있을까? -> 어드민 페이지 접속 하기 위해선 token이 필요한데, token에는 code값이 필요하다.<br/>
 해당 값을 발급 받기 위해선 카페24의 특정 url에서 로그인을 하면 주소창에 code값이 생성되고 이를 바탕으로 token 요청 api를 보낸다.<br/>
 이후 받은 응답으로 access token은 쿠키, refresh token은 local storage에 저장하게 되므로 배포된 페이지로 접속을 하면 refresh token을 갖고 토큰을 요청하므로 어드민 권한이 부여된다.<br/>
-5. 로그인이 되어있는 상태에서 token이 만료 되면, 헤더의 로그아웃 부분이 클릭되지 않으며 '유효하지 않는 사용자' 라고 401 의 상태값이 나타난다.<br/>
+4. 로그인이 되어있는 상태에서 token이 만료 되면, 헤더의 로그아웃 부분이 클릭되지 않으며 '유효하지 않는 사용자' 라고 401 의 상태값이 나타난다.<br/>
 -> header 부분에 에러 상태값에 대한 조건식을 넣어 에러 상태값이 401 일시 token을 제거하는 코드를 작성해주었다. 
 <img width="527" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/68d443b7-3e8b-49e9-b4f2-a00edbcd4ac9">
 <img width="298" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/40200159-a992-4ed5-8748-4a769437cf62">
 <img width="246" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/c0ba71de-ccde-4e67-ae9b-51b5bd7867ab">
 <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f6b3ea27-6b47-403a-9ffc-88c50c4493dc">
 
+------
 
 
 
