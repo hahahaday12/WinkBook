@@ -1,8 +1,7 @@
 import axios, { AxiosError, AxiosInstance } from 'axios'
 
-
 const authInterceptors = (instance: AxiosInstance): AxiosInstance => {
-    instance.interceptors.request.use(
+  instance.interceptors.request.use(
       config => {
         // 로컬스토리지에 저장되어 있는 AccessToken을 호출.
         const token = localStorage.getItem('token')
