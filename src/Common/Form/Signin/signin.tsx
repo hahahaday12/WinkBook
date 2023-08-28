@@ -1,14 +1,15 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { FormEvent, useState, ChangeEvent } from 'react';
-import { useEffect } from 'react';
+import { FormEvent, useState, ChangeEvent, useContext } from 'react';
 import { LoginForm } from '@/Apis/register';
 import Swal from 'sweetalert2';
+import { TokenContext } from '@/Context/TokenContext';
 import './signin.scss';
 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const tokenContext = useContext(TokenContext); 
 
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -18,14 +19,8 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/');
-    }
-  }, []);
 
-  async function Signin(event: FormEvent<HTMLFormElement>) {
+  async function Signin(event: FormEvent<HTMLFormElement>) {  
     event.preventDefault();
 
     if (email === undefined || email === '' || email === null) {
@@ -41,6 +36,7 @@ function Login() {
     try {
       const data = await LoginForm(email, password);
       if (data.accessToken) {
+        tokenContext?.setToken(data.accessToken); 
         window.localStorage.setItem('token', data.accessToken);
         Swal.fire('로그인 되었습니다!', '반갑습니다:)', 'success').then(() => {
           navigate('/');

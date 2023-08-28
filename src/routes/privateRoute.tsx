@@ -1,4 +1,6 @@
 import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { TokenContext } from '@/Context/TokenContext';
 
 interface PrivatePageProps {
   component: any;
@@ -7,7 +9,8 @@ interface PrivatePageProps {
 
 function PrivatePage({component:Component, status:Status}: PrivatePageProps) {
   
-  const token = localStorage.getItem("token")
+  const tokenContext = useContext(TokenContext);
+  const token = tokenContext?.token; 
 
   let tokenCheck = false;
   let result = null;
@@ -16,7 +19,6 @@ function PrivatePage({component:Component, status:Status}: PrivatePageProps) {
     tokenCheck  = true;
   }
 
- 
   if(tokenCheck){
     result = Component;
   } else {
@@ -29,6 +31,7 @@ function PrivatePage({component:Component, status:Status}: PrivatePageProps) {
   }
   return result;
 }
+
 export default PrivatePage
 
 

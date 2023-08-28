@@ -1,8 +1,9 @@
 import BookCustom from '../../../bookcustom/bookcustom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import TopHeader from './components/TopHeader';
 import { getDetail } from '@/Apis/productApi';
+import { TokenContext } from '@/Context/TokenContext';
 import './DetailPage.scss';
 import Swal from 'sweetalert2';
 
@@ -24,6 +25,8 @@ function DetailPage() {
 
   const navigate = useNavigate();
   const [detail, setDetail] = useState<DetailInfo>({} as DetailInfo);
+  const tokenContext = useContext(TokenContext);
+  const token = tokenContext?.token; 
 
   const { productNo } = useParams();
 
@@ -65,8 +68,6 @@ function DetailPage() {
       await getDetails();
     })();
   }, []);
-
-  const token = localStorage.getItem('token');
 
   const BuyBook = (detail: DetailInfo, type: string) => {
     let Cart: DetailInfo[] = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -166,14 +167,12 @@ function DetailPage() {
             <div className="ButtonContainer">
               <button
                 className="CartAdd"
-                onClick={() => BuyBook(detail, 'buy')}
-              >
+                onClick={() => BuyBook(detail, 'buy')}>
                 책 구매하기
               </button>
               <button
                 className="BookBill"
-                onClick={() => BuyBook(detail, 'rent')}
-              >
+                onClick={() => BuyBook(detail, 'rent')}>
                 책 대여하기
               </button>
             </div>
