@@ -3,6 +3,7 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import DeleteButton from "@/Components/Button/CartDeletebutton";
 import "./CartItems.scss";
 
 interface BuyItem {
@@ -129,11 +130,8 @@ const CartItems = ({
               </div>
 
               <div className="CartButtonBox">
-                <button
-                  onClick={() => RemoveBuyItem(el.product_no)}
-                >
-                  삭제
-                </button>
+                <DeleteButton onDelete={() => RemoveBuyItem(el.product_no)} />
+                {/* <DeleteButtonLogic productNo={el.product_no.toString()} /> */}
               </div>
             </div>
           ))}

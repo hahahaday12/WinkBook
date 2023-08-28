@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import DeleteButton from "@/Components/Button/CartDeletebutton";
 import './CartRent.scss'
 
 interface RentItem {
@@ -136,9 +137,8 @@ interface RentItem {
             <span>{formatter.format(el.price)}원</span>
           </div>
           <div className="RentButtonBox">
-            <button onClick={() => RemoveBuyItem(el.product_no)}>
-              삭제
-            </button>
+            <DeleteButton onDelete={() => RemoveBuyItem(el.product_no)} />
+            {/* <DeleteButtonLogic productNo={el.product_no.toString()} /> */}
           </div>    
         </div>
       ))}
