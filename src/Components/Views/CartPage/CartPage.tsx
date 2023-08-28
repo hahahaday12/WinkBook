@@ -158,7 +158,6 @@ function CartPage() {
             <div className="Buy-Container">
               <div className="Pay-Container">
                 <span>총 상품 가격 </span>
-                {/* {ShowTotal && <h3>${Total}원</h3>} */}
                 {ShowTotal && <h3>{formatter.format(Total)}원</h3>}
               </div>
             </div>
