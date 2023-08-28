@@ -92,30 +92,29 @@ const Payment = ({ amount, productlists, setdatalist }: PaymentInfo) => {
     if (success) {
       Swal.fire('결제 성공!', '', 'success').then(() => {
         const mypayarray: string | null = window.localStorage.getItem("mypayment");
+
+        // mypayarray 변수에 저장된 로컬값"mypayment" 이 있다면, 해당문자열 JSON 파싱해서 대입 비어있음 NULL
         const combinedArray: string[] | null = mypayarray ? JSON.parse(mypayarray) : null;
+        // 만약 !combinedArray 가 NULL이면, 새로운 배열 만들어서 결제내역 초기화 
+        //orderNumber를 담은 배열을 JSON 형식으로 만들어 "mypayment" 키에 저장
         if (!combinedArray) {
           window.localStorage.setItem("mypayment", JSON.stringify([orderNumber]));
+          // combinedArray에 이미 결제 내역이 있는 경우, orderNumber를 배열에 추가.
         } else {
           combinedArray.push(orderNumber);
           window.localStorage.setItem("mypayment", JSON.stringify(combinedArray));
         }  
 
-        const productItemlist = productlists
-        .map((obj: { product_no: any }) => obj.product_no)
+        const productItemlist = productlists.map((obj: { product_no: any }) => obj.product_no)
         .join(',');
         const cartlist: BuyItem[] = JSON.parse(
-        window.localStorage.getItem('cart') || '[]'
-        );
+        window.localStorage.getItem('cart') || '[]');
 
-        const updatedArray = cartlist.filter(
-        (item) => !productItemlist.includes(item.product_no)
-        );
+        const updatedArray = cartlist.filter((item) => !productItemlist.includes(item.product_no));
         window.localStorage.setItem('cart', JSON.stringify(updatedArray));
         setdatalist(updatedArray);
         navigate('/mypage')
-      });
-    
-      
+      }); 
     } else {
       Swal.fire(`결제 실패: ${error_msg}`, '', 'error');
     }
