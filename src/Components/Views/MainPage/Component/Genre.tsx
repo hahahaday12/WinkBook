@@ -29,7 +29,7 @@ export default function Genre({ category }: { category: Props }) {
       </div>
 
       <div className="right">
-        <img className="Top-bookContainer" src="/images/Group 8.png" />
+        <img className="Top-bookContainer" src="/images/Group 8.avif" />
         {list &&
           list.map((item) => (
             <BookInfo
@@ -42,7 +42,7 @@ export default function Genre({ category }: { category: Props }) {
               summary={item.summary_description}
             />
           ))}
-        <img className="Bottom-bookContainer" src="/images/Group 8.png" />
+        <img className="Bottom-bookContainer" src="/images/Group 8.avif" />
       </div>
     </div>
   );

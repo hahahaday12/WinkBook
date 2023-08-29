@@ -21,7 +21,7 @@ interface Product {
 }
 
 function Header() {
-  const defaultProfileImgUrl = '/images/default-profile.jpg';
+  const defaultProfileImgUrl = '/images/default-profile.avif';
   const [user, setUser] = useState<User>({ displayName: '', profileImg: '' });
   const [product, setProductInfo] = useState<Product[]>([]);
 
@@ -118,11 +118,10 @@ function Header() {
     <header className="headerContainer">
       <div className="itemsWrapper">
         <Link to="/" className="logoBox">
-          <img src="/images/Wink_logo.png" alt="logo" />
+          <img src="/images/Wink_logo.avif" alt="logo" />
         </Link>
         <HeaderInput product={product}/>
         <div className="Header-box">
-          <>
           {privatelinks}
             {token ? (
               <div className="Header-box__text">
@@ -137,8 +136,7 @@ function Header() {
               <>
               {searchLinks}
               </>
-            )}
-          </>  
+          )}  
         </div>  
       </div>
     </header>

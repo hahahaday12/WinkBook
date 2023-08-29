@@ -9,7 +9,7 @@ interface User {
 }
 
 const Category = () => {
-  const defaultProfileImgUrl = '/images/default-profile.jpg';
+  const defaultProfileImgUrl = '/images/default-profile.avif';
   const [user, setUser] = useState<User>({
     displayName: '',
     profileImg: defaultProfileImgUrl,

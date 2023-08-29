@@ -63,7 +63,8 @@ export default function Carousel() {
       >
         {arr.map((v, i) => (
           <div className="page" key={i}>
-            <img src={`/images/carousel${v}.png`} alt="" />
+            
+              <img src={`/images/carousel${v}.avif`} alt="" />
           </div>
         ))}
       </div>

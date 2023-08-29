@@ -44,7 +44,7 @@ export default function Main() {
   return (
     <main>
       <div className="Category-menu">
-        <img src="/images/pick.png" alt="책갈피" />
+        <img src="/images/pick.avif" alt="책갈피" />
         <ul className="Category-menu__text">
           {category.map((item) => (
             <li

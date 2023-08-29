@@ -24,7 +24,7 @@ const Footer = () => {
     <footer>
       <div className="footerContainer">
         <div className="Logo-box">
-          <img src="/images/Wink_logo.png" alt="logo_image" />
+          <img src="/images/Wink_logo.avif" alt="logo_image" />
         </div>
         <p className="title">ToyProject ©️ 5기 7조 Twinkle</p>
         <div className="Footer-inner">
