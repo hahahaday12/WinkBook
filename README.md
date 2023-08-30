@@ -344,7 +344,36 @@ Proxy 설정을 한다면 요청을 날릴 때 origin을 바꿔서 server에 날
 각 기능들에서 데이터 핸들링을 하며, 어떻게 하면 조금더 가독성이 좋고, 성능 좋은 코드를 작성할수 있을까 고민해 볼수 있는 계기가 되었습니다.<br/>
 이번 프로젝트를 하면서 다양한 기능적 구현을 경험 할수 있었으며, 다음번엔 실서비스를 할수 있을만한 퀄리티의 프로젝트를 만들어 보고 싶은 욕심도 생기게 되었습니다. <br/>
 
-# refactoring
+# refactoring 성능 개선 후기 
+## 1차 성능 검진 (PageSpeed Insights 활용)
+<img width="398" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ccd75ed8-28ec-4d14-95db-8cc5b37635df"> <br/>
+-> 코드 구조 수정 X , 맨처음 배포된 성능 점수 표 입니다. 
+
+## 2차 성능 검진 코드 리팩토링 후 (PageSpeed Insights 활용)
+<img width="413" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/cd9053d4-88e4-4373-bc3e-3d6166264bdb">  <br/>
+-> header searchInput 컴포넌트 모듈화 , 필요없는 이미지, 코드 삭제후 성능 검사 점수 표입니다. 성능 점수가 올라갔으며, 각각의 성능 속도가 조금 빨라 진것이 보입니다. <br/>
+
+## 3차 성능 검진 코드 리팩토링 후 (PageSpeed Insights 활용)
+
+-> 프로젝트 특성상 이미지가 많은 부분을 차지 하기 때문에 이미지부분에서 어떻게 하면 성능을 개선할수 있을지 고민 하였습니다. <br/>
+기존 openApi 에서 받아오는 이미지 형식이 jpg 로 지정이 되어있기 때문에 이미지 형식 변환이 어려웠고, 데이터에 저장된 이미지가 아닌 현 프로젝트 public에 저장되어 있는 이미지의 형식을 변환해 보도록 하였습니다.<br/> 
+PageSpeed Insights에서 이미지를 변환하는 방식에 WenP, AVIF 의 형식이 기존 JPEG 보다 압축률이 놓고 다운로드가 빠르다는 정보를 주었습니다. 따라 프로젝트에 저장된 이미지의 형식을 AVIF 형식으로 변환하였습니다. <br/>
+<img width="338" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b82627ff-3365-4f4f-b04f-a8eb0a4bfc2d"><br/>
+
+변환된 파일 사진 
+<img width="143" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/e8d8f9cd-b037-4bab-b6e1-a944f6281bd4">
+
+### 변환후 성능 검진
+<img width="396" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/0417a193-bca7-40af-9f70-6139367649d1">  <br/>
+
+-> 2차 성능 검진 보다 로딩 속도도 빠르고 , 성능 점수도 올라간것 이 보이며 페이지를 처음들어올때 화면 로딩이 조금 빨라진것도 느끼게 되었습니다.<br/>
+ 조그만 부분에서도 성능 개선이 이뤄지는 것을 보면서, 성능에 대해 신경쓰며 기능 구현 하는것이 중요하다는 것을 느끼게 되었습니다.
+ 또한 성능 개선을 위해 자료를 찾아보며 다양한 방법으로 개선이 이뤄지는 것을 깨닫게 되었습니다. 
+ 앞으로 다양한 방법으로 성능 개선을 해보록 하겠습니다.
+ 
+
+
+
 
 
 
