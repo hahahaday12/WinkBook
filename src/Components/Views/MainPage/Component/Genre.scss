@@ -40,6 +40,13 @@
     width: 100%;
     z-index: 200;
     top: 43%;
+
+    img {
+      border-radius: 10px;
+      width: 100%;
+      height: 250px;
+      position: relative;
+    }
   }
 
   .Bottom-bookContainer {
