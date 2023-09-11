@@ -27,6 +27,27 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 --------
 
+## 시작 가이드
+### Requirements
+For building and running the application you need:
+
+- [Node.js 16.14.1](https://nodejs.org/ca/blog/release/v16.14.1/)
+- [Npm 8.5.0](https://www.npmjs.com/package/npm/v/8.5.0)
+
+### Installation
+``` bash
+$ git clone git@github.com:hahahaday12/WinkBook.git
+$ cd client
+```
+#### Frontend
+```
+$ cd client
+$ npm install 
+$ npm run dev
+```
+
+--------
+
 ## 🖥전체 화면 구성 
 
 | **메인 페이지** | **메인 페이지** | **메인 페이지** |
