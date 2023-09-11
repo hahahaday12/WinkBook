@@ -27,62 +27,6 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 --------
 
-##  팀원
-
-|            [서동욱](https://github.com/foodeco)            |            [김하은](https://github.com/hahahaday12)             |             [김세연](https://github.com/saeyeonKim)             |              [문대현](https://github.com/dhmoon11)              |          [박진영](https://github.com/jinyoungpark231)          |
-| :--------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: | :------------------------------------------------------------: |
-| ![](https://avatars.githubusercontent.com/u/106901147?v=4) | ![](https://avatars.githubusercontent.com/u/101441685?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/118176015?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/128357255?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/76546374?s=96&v=4) |
-| 메인페이지, 어드민페이지, 카페24&아임포트 토큰 발행 및 api | 장바구니, 마이페이지, 상세페이지, 회원가입, 인증, 결제 및 조회, 디자인 및 레이아웃  |                        검색페이지, 결제                         |                    마이페이지, 회원정보 수정                    |                      검색페이지, 목록조회                      |
-
-
-
----------
-
-## ✨ 기술스택
-
-<img src="https://github.com/hahahaday12/WinkBook/assets/101441685/83729917-238e-48d5-b5e4-a546ad08cf46" width=600px alt="기술스택 이미지" />
-
-### Develoment
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
-  <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
-  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-
-### Config
-
-  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
-
-### Enviroment
-
-  <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-
-### Deployment
-
-  <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
-
-------
-
-## 📇 사용된 오픈 Api
-
-커머스: ![](https://img.cafe24.com/images/common/cafe24.svg)
-
-결제: ![](https://www.gitbook.com/cdn-cgi/image/width=100,dpr=1,height=40,fit=contain,format=auto/https%3A%2F%2F3026939543-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FwWX2hlvRZLZrXeH1aacF%252Flogo%252FdtaZNeSUqL59mzfDm6jC%252FPortOne_Logo_Black.png%3Falt%3Dmedia%26token%3Dd66f72ec-8826-4be6-8e09-b0b32ff9a482)
-
-* 결제 가능한 카드사 
- - 비씨 
- - 현대
-
-* 안되는 카드 
- - 국민 
- - 삼성 
-
-(테스트 결제 모듈이기 때문에 연결된 카드사만 결제가 됩니다. 주후 추가적인 결제 모듈도 도입해볼 생각입니다.)
-
- -------
-
 ## 🖥전체 화면 구성 
 
 | **메인 페이지** | **메인 페이지** | **메인 페이지** |
@@ -107,7 +51,7 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 | **회원정보 수정 페이지** | **결과 모달** |
 | :--------------------------------------------: | :--------------------------------------------: | 
-| <img src="https://github.com/hahahaday12/WinkBook/assets/101441685/bed2f139-6cd0-4148-a65b-e032ca74f6de" width=620px alt="회원정보 수정" /> | <img src="https://github.com/KDT1-FE/KDT5-M5/assets/101441685/0fc9436a-9440-4bcd-808e-f15cf87838c3" width=600px alt="결과 모당창" />
+| <img src="https://github.com/hahahaday12/WinkBook/assets/101441685/bed2f139-6cd0-4148-a65b-e032ca74f6de" width=620px alt="회원정보 수정" /> | <img src="https://github.com/hahahaday12/WinkBook/assets/101441685/bfdaa760-b8bd-4682-97e7-a890dabd06d9" width=600px alt="결과 모당창" />
 
 | **관리자 페이지 (상품 관리)** | **관리자 페이지 (상품등록 관리)** |
 | :--------------------------------------------: | :--------------------------------------------: | 
@@ -121,154 +65,7 @@ WinkBook은 e-book을 판매하는 컨셉의 쇼핑몰 사이트 입니다. <br/
 
 ------
 
-## 👨🏻‍🤝‍👨🏻 협업 방식 
-
-### 1) Zoom
-- 주말 및 특별한 사유가 있는 경우를 제외하고 1시에 회의 <br/>
-- 데일리스크럼을 통해 각자의 진행상황과 작업 목표를 확인 <br/>
-    -> 대략적인 목표에 구체적인 요청사항을 추가하는 시간 <br/>
-    -> 오류 발생 시 화면을 공유하여 해결 방안을 함께 모색 <br/>
-
-### 2) discord
--> 그룹원 간 작업 내용과 구현 내용의 구체적인 요구를 할 때 사용<br/>
--> 진행 중 막히는 부분에 대한 방법 공유<br/>
-
------
-
-## 🎈 작업 진행 
-
-### 1) Notion
--> 그라운드 룰, 커밋 컨벤션, api 문서 등 프로젝트에서 필요한것들을 기록해두었습니다. 
-
-#### ✅ Api 문서 정리 
-<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d9b52548-872f-4253-80bb-f478a20a5382">
-
-#### ✅ git commit 컨벤션 정리  
- <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/e9f0c03c-afea-4a06-97cd-729542d797f3">
- 
-### 2) Github
-#### 깃허브 전략 Github Flow<br/>
--> develop branch 생성.<br/>
--> develop branch 에서 각자 이름의 branch 생성.<br/> 
--> 각자 branch 에서 기능 개발이 완료되면 develop branch 로  PR 생성.<br/> 
--> 깃허브 담당자가 올라온 Pull request 확인후 develop branch 로 merge.<br/>
--> 모든 기능 구현 완료후 최종적으로  develop branch 를 master branch 로 merge.<br/>
-
-<img width="350" height="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/7ae366b4-a077-4d3b-9609-64296bdd52ca">
-
------
-
-## ⚙ 프로젝트 설계 
-
-### use case
-<img width="800" height="400" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b3fd68fa-1b17-49ff-abeb-081531a3a009">
-<br/>
-
-### 폴더 구성(초안)
-<img width="800" height="400" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/6f434069-4618-474b-82b7-b4ca7b5d38cc">
-
------
-
-## 📌 프로젝트 주요 기능
-
-### 메인
-
-- 제품 검색
-- 추천 도서
-- sticky 안내바
-
-### 상세페이지
-
-- 구매, 대여 버튼
-- 장바구니 자동 이동
-
-### 검색
-
-- 구매, 대여 버튼
-- 검색 결과 미리보기
-
-### 마이페이지
-
-- 개인 구매 내역
-- 회원 정보 수정
-
-### 어드민페이지
-
-- 물건 등록/수정/삭제
-- 전체 회원 목록
-- 전체 결제 내역
-
------
-## 🌟 프로젝트 구현 담당 기능 설명  
-
-### 🎈 1) 로그인<br/>
--> 회원가입한 정보로 로그인 정보를 입력하게 되고 , 입력후 등록 하게 되면 Signin 이라는 함수가 실행되고, 만약 입력창에 지정한 조건이 입력되지 않으면 가입이 되지않게 return false로 지정해 두었습니다.<br/>
-조건에 맞게 입력이 되면 서버에 로그인 정보를 보내게 되고 , 서버에서 token 값을 받아 localStorage 에 저장하도록 구현 하였습니다.<br/>
-<b>token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, 접근권한 부여를 하도록 구현하였습니다.</b>
-#### 구현코드
-<img width="557" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3d946aeb-22fa-414c-a162-ed06ed243ab9">
-
-#### 🌟최종 로그인 구현모습
-
-
-
-### 🎈2) 회원가입<br/>
--> <b> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다.</b> <br/>
--> 비밀번호 유효성 검사에 대한 상태값을 저장할수 있도록 isEmail 의 state 를 생성했고, 상태에 따른 오류 메세지를 저장할수 있는 오류 상태의 emailMessage 의 state 를 생성 하였습니다. <br/>
-이후, 조건식으로 이메일 유효성 검사를 하여 지정된 조건식에 맞으면 그에 따른 상태 메세지를 setIsEmail안에 저장해두고 , 상태값을 setEmailMessage 안에 저장해두었습니다. <br/> 
-따라 사용자가 이메일을 입력중에 있을때 조건식에 맞지 않으면 아래에 해당 상태값에 대한 오류 메세지가 출력됩니다. <br/>
-
-#### 구현코드
-<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b11db4a9-4d46-4a54-8df9-216a74b9f929"><br/>
-<img width="494" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3ca8e1fc-187f-41f4-a160-b84c42654354"><br/>
-
--> 회원정보를 입력후 등록 버튼을 누르면 type 이 submit 인 {signUp} 이라는 함수가 실행되고 조건식으로 적혀지지 않은 기입 란이 존재하면 return false로 진행을 멈춥니다. <br/>
-가입 조건이 맞으면 서버로 입력정보들을 전달하고 token값을 받아와 성공 여부의 알림이 뜹니다.<br/> 예외 처리로는 서버에서 오는 상태값에 따라 알림, 콘솔 창에 나타나도록 구현하였습니다. <br/>
-
-#### 구현코드
-<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/54ebdcf8-f650-467a-a98e-ad751ae60a6f"><br/>
-<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f621a320-dcd6-4f94-8639-01967bea779e"><br/>
-<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/dbe4cbf7-aaa1-4a8e-905f-7c7a1deb5de6"><br/>
-<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d98dfbcc-3840-4065-a333-2d34da7195f3"><br/>
-
-#### 🌟최종 회원가입 구현모습
-<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/beed2a55-477b-482f-bece-16c642f63671">
-
-### 🎈3) 상세페이지
--> data라는 변수 안에 제품을 조회하는 함수 getList 를 실행후 , productList 제품리스트 정보의, product_no 제품 숫자를 입력받아 해당 아이템의 정보를 가져오게끔 구현하였습니다.<br/>
-<b> < Link > 태그를 사용하여 각 아이템에 대한 링크를 생성후 , 경로가 .product_no 값의 따라 생성되게 구현하였습니다.</b> <br/>   
-#### 구현코드<br/>
-<img width="421" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/1f6559b5-f855-4e4e-92b3-6ae2d85f023d"><br/>
-
--> <b> useParams 훅을 사용하여 현재 경로의 파라미터 값을 가져오고, 해당 값으로 productNo 변수를 초기화 하여 getDetails함수 에서 productNo값을 활용하여  해당 상품에 대한 세부 정보를 가져오게끔 구현하였습니다. </b> <br/>
-#### 구현코드
-<img width="475" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/35522ea4-00ad-4659-b5aa-0e21f1c90006">
-
-#### 🌟최종 상세페이지 구현모습
-<img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ddc25cb9-1ae2-42c7-acff-6388eaebc410"><br/>
-
-
-### 🎈4)장바구니<br/>
--> 구매, 대여 버튼 클릭시 detail에 담아져 있는 데이터와, 추가할 property 값을 매개 변수로 넘겨주었습니다. <br/>
-<b>장바구니에 담을때, 중복된 상품을 제거 하기위해 javascript의 Set 객체를 사용하고,  Spread Oprator 를 활용하여 중복 제거된 값이 배열로 변환되게 구현하였습니다.<br/>
-JSON 형태의 문자열로 변환하여 로컬 스토리지에 'cart' 키로 저장하였고 이를 통해 장바구니 데이터가 유지 됩니다. </b> 그후 상태값의 alert 창을 띄어 주었습니다. <br/>
-#### 구현코드<br/>
-<img width="450" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/25b9ea2d-f1ed-44f1-80a0-2bbf62f460f5">
-<img width="350" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/441c2a13-93a2-4d01-9052-c30f57f6ee7a"><br/>
-
--> 예외처리로 some()  메서드를 사용하여 하나 이상 요소가 조건을 만족하면 true 값이 나옵니다. 따라 , 장바구니에 있는 상품번호와 현재 상세페이지 상품정보가 같으면 true가 되어 중복이라는 알림창이 나타나게 됩니다.<br/> 
-#### 구현코드<br/>
-<img width="539" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ee071e3b-e496-4abc-ba0c-57c00da5d555">
-
-### 🎈5) 결제페이지
-->  Import open Api 를 이용해서 결제 정보를 props로 넘겨 주었습니다. 결제가 완료된후 마이페이지에 출력하기위해 결제 번호를 localStorage 에 저장하였습니다. <br/>
-(# 로컬에 저장한 이유 = 제품 구매 내역을 구현하기 위해선 구매내역을 저장할수 있는 DB,Api 가 따로 있어야 했습니다. 하지만 해당 Api가 설계되어있지 않았기 때문에 기능구현을 위해 localStorage에 저장하도록 구현하였습니다.)
-이후 결제가 성공되면, "mypayment" 키 값으로 로컬스토리지에 해당 키 값이 저장되어있으면, JSON.Parse 를 하여 변수에 할당해주었고, 없으면 주문번호를 담은 배열을 만들어 "mypayment" 키 값에 저장되게 구현하였습니다.
-#### 구현코드
-<img width="611" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/5237f4a0-b7eb-4404-ad72-8ab74910124c">
------
-
-##  구현중 마주친 문제점 과 해결방안  
+##  프로젝트 구현중 마주친 문제점 과 해결방안  
 
 ### 🔥 문제 1. 서로 다른 도메인으로 인한 cors 오류<br/>
 -> <b>corse 오류란?</b><br/>
@@ -370,12 +167,210 @@ PageSpeed Insights에서 이미지를 변환하는 방식에 WenP, AVIF 의 형�
  조그만 부분에서도 성능 개선이 이뤄지는 것을 보면서, 성능에 대해 신경쓰며 기능 구현 하는것이 중요하다는 것을 느끼게 되었습니다.
  또한 성능 개선을 위해 자료를 찾아보며 다양한 방법으로 개선이 이뤄지는 것을 깨닫게 되었습니다. 
  앞으로 다양한 방법으로 성능 개선을 해볼 생각입니다. 
+
+------
+
+## 🌟 프로젝트 구현 담당 기능 설명  
+
+### 🎈 1) 로그인<br/>
+-> 회원가입한 정보로 로그인 정보를 입력하게 되고 , 입력후 등록 하게 되면 Signin 이라는 함수가 실행되고, 만약 입력창에 지정한 조건이 입력되지 않으면 가입이 되지않게 return false로 지정해 두었습니다.<br/>
+조건에 맞게 입력이 되면 서버에 로그인 정보를 보내게 되고 , 서버에서 token 값을 받아 localStorage 에 저장하도록 구현 하였습니다.<br/>
+<b>token 을 사용하여 사용자를 식별하고 , 사용자의 세션유지, 접근권한 부여를 하도록 구현하였습니다.</b>
+#### 구현코드
+<img width="557" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3d946aeb-22fa-414c-a162-ed06ed243ab9">
+
+#### 🌟최종 로그인 구현모습
+
+-> <사진 첨부 필요>
+
+### 🎈2) 회원가입<br/>
+-> <b> form 태그를 이용하여 사용자 친화적인 인터페이스를 만들고 , 안의 데이터 요소들을 그룹화 하여 서버에게 데이터를 간소화 하여 전달 하게 구현하였습니다.</b> <br/>
+-> 비밀번호 유효성 검사에 대한 상태값을 저장할수 있도록 isEmail 의 state 를 생성했고, 상태에 따른 오류 메세지를 저장할수 있는 오류 상태의 emailMessage 의 state 를 생성 하였습니다. <br/>
+이후, 조건식으로 이메일 유효성 검사를 하여 지정된 조건식에 맞으면 그에 따른 상태 메세지를 setIsEmail안에 저장해두고 , 상태값을 setEmailMessage 안에 저장해두었습니다. <br/> 
+따라 사용자가 이메일을 입력중에 있을때 조건식에 맞지 않으면 아래에 해당 상태값에 대한 오류 메세지가 출력됩니다. <br/>
+
+#### 구현코드
+<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b11db4a9-4d46-4a54-8df9-216a74b9f929"><br/>
+<img width="494" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/3ca8e1fc-187f-41f4-a160-b84c42654354"><br/>
+
+-> 회원정보를 입력후 등록 버튼을 누르면 type 이 submit 인 {signUp} 이라는 함수가 실행되고 조건식으로 적혀지지 않은 기입 란이 존재하면 return false로 진행을 멈춥니다. <br/>
+가입 조건이 맞으면 서버로 입력정보들을 전달하고 token값을 받아와 성공 여부의 알림이 뜹니다.<br/> 예외 처리로는 서버에서 오는 상태값에 따라 알림, 콘솔 창에 나타나도록 구현하였습니다. <br/>
+
+#### 구현코드
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/54ebdcf8-f650-467a-a98e-ad751ae60a6f"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/f621a320-dcd6-4f94-8639-01967bea779e"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/dbe4cbf7-aaa1-4a8e-905f-7c7a1deb5de6"><br/>
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d98dfbcc-3840-4065-a333-2d34da7195f3"><br/>
+
+#### 🌟최종 회원가입 구현모습
+<img width="404" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/beed2a55-477b-482f-bece-16c642f63671">
+
+### 🎈3) 상세페이지
+-> data라는 변수 안에 제품을 조회하는 함수 getList 를 실행후 , productList 제품리스트 정보의, product_no 제품 숫자를 입력받아 해당 아이템의 정보를 가져오게끔 구현하였습니다.<br/>
+<b> < Link > 태그를 사용하여 각 아이템에 대한 링크를 생성후 , 경로가 .product_no 값의 따라 생성되게 구현하였습니다.</b> <br/>   
+#### 구현코드<br/>
+<img width="421" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/1f6559b5-f855-4e4e-92b3-6ae2d85f023d"><br/>
+
+-> <b> useParams 훅을 사용하여 현재 경로의 파라미터 값을 가져오고, 해당 값으로 productNo 변수를 초기화 하여 getDetails함수 에서 productNo값을 활용하여  해당 상품에 대한 세부 정보를 가져오게끔 구현하였습니다. </b> <br/>
+#### 구현코드
+<img width="475" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/35522ea4-00ad-4659-b5aa-0e21f1c90006">
+
+#### 🌟최종 상세페이지 구현모습
+<img width="479" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ddc25cb9-1ae2-42c7-acff-6388eaebc410"><br/>
+
+
+### 🎈4)장바구니<br/>
+-> 구매, 대여 버튼 클릭시 detail에 담아져 있는 데이터와, 추가할 property 값을 매개 변수로 넘겨주었습니다. <br/>
+<b>장바구니에 담을때, 중복된 상품을 제거 하기위해 javascript의 Set 객체를 사용하고,  Spread Oprator 를 활용하여 중복 제거된 값이 배열로 변환되게 구현하였습니다.<br/>
+JSON 형태의 문자열로 변환하여 로컬 스토리지에 'cart' 키로 저장하였고 이를 통해 장바구니 데이터가 유지 됩니다. </b> 그후 상태값의 alert 창을 띄어 주었습니다. <br/>
+#### 구현코드<br/>
+<img width="450" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/25b9ea2d-f1ed-44f1-80a0-2bbf62f460f5">
+<img width="350" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/441c2a13-93a2-4d01-9052-c30f57f6ee7a"><br/>
+
+-> 예외처리로 some()  메서드를 사용하여 하나 이상 요소가 조건을 만족하면 true 값이 나옵니다. 따라 , 장바구니에 있는 상품번호와 현재 상세페이지 상품정보가 같으면 true가 되어 중복이라는 알림창이 나타나게 됩니다.<br/> 
+#### 구현코드<br/>
+<img width="539" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/ee071e3b-e496-4abc-ba0c-57c00da5d555">
+
+### 🎈5) 결제페이지
+->  Import open Api 를 이용해서 결제 정보를 props로 넘겨 주었습니다. 결제가 완료된후 마이페이지에 출력하기위해 결제 번호를 localStorage 에 저장하였습니다. <br/>
+(# 로컬에 저장한 이유 = 제품 구매 내역을 구현하기 위해선 구매내역을 저장할수 있는 DB,Api 가 따로 있어야 했습니다. 하지만 해당 Api가 설계되어있지 않았기 때문에 기능구현을 위해 localStorage에 저장하도록 구현하였습니다.)
+이후 결제가 성공되면, "mypayment" 키 값으로 로컬스토리지에 해당 키 값이 저장되어있으면, JSON.Parse 를 하여 변수에 할당해주었고, 없으면 주문번호를 담은 배열을 만들어 "mypayment" 키 값에 저장되게 구현하였습니다.
+#### 구현코드
+<img width="611" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/5237f4a0-b7eb-4404-ad72-8ab74910124c">
+
+-----
+
+##  팀원
+
+|            [서동욱](https://github.com/foodeco)            |            [김하은](https://github.com/hahahaday12)             |             [김세연](https://github.com/saeyeonKim)             |              [문대현](https://github.com/dhmoon11)              |          [박진영](https://github.com/jinyoungpark231)          |
+| :--------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: | :------------------------------------------------------------: |
+| ![](https://avatars.githubusercontent.com/u/106901147?v=4) | ![](https://avatars.githubusercontent.com/u/101441685?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/118176015?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/128357255?s=96&v=4) | ![](https://avatars.githubusercontent.com/u/76546374?s=96&v=4) |
+| 메인페이지, 어드민페이지, 카페24&아임포트 토큰 발행 및 api | 장바구니, 마이페이지, 상세페이지, 회원가입, 인증, 결제 및 조회, 디자인 및 레이아웃  |                        검색페이지, 결제                         |                    마이페이지, 회원정보 수정                    |                      검색페이지, 목록조회                      |
+
+
+
+---------
+
+## ✨ 기술스택
+
+<img src="https://github.com/hahahaday12/WinkBook/assets/101441685/83729917-238e-48d5-b5e4-a546ad08cf46" width=600px alt="기술스택 이미지" />
+
+### Develoment
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+  <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+
+### Config
+
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
+
+### Enviroment
+
+  <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+
+### Deployment
+
+  <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
+
+------
+
+## 📇 사용된 오픈 Api
+
+커머스: ![](https://img.cafe24.com/images/common/cafe24.svg)
+
+결제: ![](https://www.gitbook.com/cdn-cgi/image/width=100,dpr=1,height=40,fit=contain,format=auto/https%3A%2F%2F3026939543-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FwWX2hlvRZLZrXeH1aacF%252Flogo%252FdtaZNeSUqL59mzfDm6jC%252FPortOne_Logo_Black.png%3Falt%3Dmedia%26token%3Dd66f72ec-8826-4be6-8e09-b0b32ff9a482)
+
+* 결제 가능한 카드사 
+ - 비씨 
+ - 현대
+
+* 안되는 카드 
+ - 국민 
+ - 삼성 
+
+(테스트 결제 모듈이기 때문에 연결된 카드사만 결제가 됩니다. 주후 추가적인 결제 모듈도 도입해볼 생각입니다.)
+
+------
+
+## 👨🏻‍🤝‍👨🏻 협업 방식 
+
+### 1) Zoom
+- 주말 및 특별한 사유가 있는 경우를 제외하고 1시에 회의 <br/>
+- 데일리스크럼을 통해 각자의 진행상황과 작업 목표를 확인 <br/>
+    -> 대략적인 목표에 구체적인 요청사항을 추가하는 시간 <br/>
+    -> 오류 발생 시 화면을 공유하여 해결 방안을 함께 모색 <br/>
+
+### 2) discord
+-> 그룹원 간 작업 내용과 구현 내용의 구체적인 요구를 할 때 사용<br/>
+-> 진행 중 막히는 부분에 대한 방법 공유<br/>
+
+-----
+
+## 🎈 작업 진행 
+
+### 1) Notion
+-> 그라운드 룰, 커밋 컨벤션, api 문서 등 프로젝트에서 필요한것들을 기록해두었습니다. 
+
+#### ✅ Api 문서 정리 
+<img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/d9b52548-872f-4253-80bb-f478a20a5382">
+
+#### ✅ git commit 컨벤션 정리  
+ <img width="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/e9f0c03c-afea-4a06-97cd-729542d797f3">
  
+### 2) Github
+#### 깃허브 전략 Github Flow<br/>
+-> develop branch 생성.<br/>
+-> develop branch 에서 각자 이름의 branch 생성.<br/> 
+-> 각자 branch 에서 기능 개발이 완료되면 develop branch 로  PR 생성.<br/> 
+-> 깃허브 담당자가 올라온 Pull request 확인후 develop branch 로 merge.<br/>
+-> 모든 기능 구현 완료후 최종적으로  develop branch 를 master branch 로 merge.<br/>
 
+<img width="350" height="500" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/7ae366b4-a077-4d3b-9609-64296bdd52ca">
 
+-----
 
+## ⚙ 프로젝트 설계 
 
+### use case
+<img width="800" height="400" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/b3fd68fa-1b17-49ff-abeb-081531a3a009">
+<br/>
 
+### 폴더 구성(초안)
+<img width="800" height="400" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/6f434069-4618-474b-82b7-b4ca7b5d38cc">
 
+-----
 
+## 📌 프로젝트 주요 기능
 
+### 메인
+
+- 제품 검색
+- 추천 도서
+- sticky 안내바
+
+### 상세페이지
+
+- 구매, 대여 버튼
+- 장바구니 자동 이동
+
+### 검색
+
+- 구매, 대여 버튼
+- 검색 결과 미리보기
+
+### 마이페이지
+
+- 개인 구매 내역
+- 회원 정보 수정
+
+### 어드민페이지
+
+- 물건 등록/수정/삭제
+- 전체 회원 목록
+- 전체 결제 내역
+
+-----
