@@ -6,6 +6,7 @@ import { getDetail } from '@/Apis/productApi';
 import { TokenContext } from '@/Context/TokenContext';
 import './DetailPage.scss';
 import Swal from 'sweetalert2';
+import { detailText } from '@/constants/detailPageText';
 
 function DetailPage() {
   interface DetailInfo {
@@ -131,7 +132,7 @@ function DetailPage() {
           <div className="TitleBox">
             <span>{detail.product_name}</span>
             <div className="InnerTitleBox">
-              <p>윙크북 {detail.product_name} 전자책 출간일 2023-0505</p>
+              <p> {detailText.winkText}{detail.product_name} {detailText.winkStart}</p>
             </div>
           </div>
 
@@ -142,22 +143,21 @@ function DetailPage() {
 
         <div className="RightContainer">
           <div className="RightContainer-TopText">
-            <p>
-              책모양 아크릴 거울 <br />
-              (대상 도서 포함 3만원 이상 구매 시)
+            <p> {detailText.bookShape} <br />
+              ({detailText.buy})
             </p>
           </div>
 
           <div className="RightContainer-Content">
             <div className="OriginPrice">
-              <span className="PriceText">판매가</span>
+              <span className="PriceText">{detailText.priceText}</span>
               <span className="PriceNumber">
 
                 {formatter.format(detail.price)}원
               </span>
             </div>
             <div className="ContentContainer">
-              <span className="ContentBox">줄거리</span>
+              <span className="ContentBox">{detailText.sum}</span>
               <span className="contentText">
                 <p>{detail.summary_description}</p>
               </span>
@@ -168,12 +168,12 @@ function DetailPage() {
               <button
                 className="CartAdd"
                 onClick={() => BuyBook(detail, 'buy')}>
-                책 구매하기
+                {detailText.buyBook}
               </button>
               <button
                 className="BookBill"
                 onClick={() => BuyBook(detail, 'rent')}>
-                책 대여하기
+                {detailText.buyRent}
               </button>
             </div>
           </div>
@@ -181,8 +181,8 @@ function DetailPage() {
 
         <div className="BookContent"></div>
         <span className="BookContent-text">
-          출판사 제공 <br />
-          책소개
+          {detailText.supot}<br />
+          {detailText.introduce}
         </span>
         <div className={`TopBox ${isScrolled ? 'slide-down' : ''}`}>
           {isScrolled ? (
