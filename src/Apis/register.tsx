@@ -1,4 +1,5 @@
 import { authInstance, baseInstance } from './axios';
+import { IForm } from '@/Common/Form/Signin/signin';
 
 const { VITE_KDT5_API, VITE_KDT5_USER } = import.meta.env;
 
@@ -24,9 +25,10 @@ export const JoinForm = async (
   return res.data;
 };
 
-export const LoginForm = async (email: string, password: string) => {
+export const LoginForm = async (data: IForm) => {
   const LOGINURL = '/login';
-  const res = await baseInstance.post(LOGINURL, { email, password },{headers});
+  const res = await baseInstance.post(
+    LOGINURL,data,{ headers });
   return res.data;
 };
 
