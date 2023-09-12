@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './BookInfo.scss';
 
 interface Props {
@@ -21,7 +22,7 @@ export default function BookInfo({
 }: Props) {
   const [hover, setHover] = useState(false);
 
-const formatter = new Intl.NumberFormat("ko-KR");
+  const formatter = new Intl.NumberFormat('ko-KR');
 
   return (
     <Link
@@ -52,13 +53,20 @@ const formatter = new Intl.NumberFormat("ko-KR");
             <div className="Main-Pricebox">{formatter.format(price)}원</div>
           ) : (
             <div className="Main-Pricebox">
-              <span className="retail-price">{formatter.format(retailPrice)}원</span>
+              <span className="retail-price">
+                {formatter.format(retailPrice)}원
+              </span>
               <span>{formatter.format(price)}원</span>
             </div>
           )}
         </div>
 
-        <img src={productImg} alt={productName} />
+        <LazyLoadImage
+          src={productImg}
+          alt={productName}
+          loading="lazy"
+          effect="blur"
+        />
       </div>
     </Link>
   );
