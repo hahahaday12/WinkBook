@@ -1,0 +1,22 @@
+.LoadingContainer {
+  width: 30%;
+  height: 80px;
+  margin: auto;
+
+  .LoadingCenter {
+    width: 150px;
+    position: relative;
+    margin: auto;
+    margin-top: 50%;
+
+    h3 {
+      width: 120px;
+      margin: auto;
+      padding-bottom: 20px;
+    }
+
+    .LoadingBox {
+      margin-left: 60px;
+    }
+  }
+}
