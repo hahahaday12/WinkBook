@@ -40,35 +40,42 @@ function MyPage() {
   const [itemList, setItemList] = useState<PaymentItem[]>([]);
   const [mydataList, setMydataList] = useState<PageData[]>([]);
 
-
-  const GetToken = async  () => {
-    try{
-    const accessToken = await MypageToken();
-     return accessToken;
+  const GetToken = async () => {
+    try {
+      const accessToken = await MypageToken();
+      return accessToken;
     } catch (error) {
       console.log(error);
       throw error;
-    }       
-  }
+    }
+  };
 
   const fetchData = async (): Promise<void> => {
     setMydataList([]);
     try {
       const paynumber: string | null = window.localStorage.getItem('mypayment');
+
       if (paynumber) {
         const merchantUids = JSON.parse(paynumber);
         const accessToken = await GetToken();
-        const paymentsResponse: AxiosResponse<PaymentsResponse> = await axios.get(
-          `/iamport/payments/status/paid?limit=100&sorting=paid&_token=${accessToken}`
-        );
-  
-        if (paymentsResponse.data && paymentsResponse.data.response && paymentsResponse.data.response.list) {
-          const filteredList: PaymentItem[] = paymentsResponse.data.response.list.filter((item) =>
-            merchantUids.includes(item.merchant_uid)
+        const paymentsResponse: AxiosResponse<PaymentsResponse> =
+          await axios.get(
+            `/iamport/payments/status/paid?limit=100&sorting=paid&_token=${accessToken}`
           );
-          if(filteredList){
+
+        if (
+          paymentsResponse.data &&
+          paymentsResponse.data.response &&
+          paymentsResponse.data.response.list
+        ) {
+          const filteredList: PaymentItem[] =
+            paymentsResponse.data.response.list.filter((item) =>
+              merchantUids.includes(item.merchant_uid)
+            );
+
+          if (filteredList) {
             setItemList(filteredList);
-          }else{
+          } else {
             setItemList([]);
           }
         } else {
@@ -91,14 +98,14 @@ function MyPage() {
       return;
     }
 
-    const checkJson = function (str: string){
-      try{
+    const checkJson = function (str: string) {
+      try {
         JSON.parse(str);
-      }catch(e){
+      } catch (error) {
         return false;
       }
       return true;
-    }
+    };
 
     const useData = itemList.filter((item) => item.custom_data);
     useData.forEach((item) => {
@@ -109,22 +116,22 @@ function MyPage() {
           paid_at: item.paid_at,
           merchant_uid: item.merchant_uid,
         }));
-         setMydataList((prevDataList) => [...prevDataList, ...parsedData]);
+        setMydataList((prevDataList) => [...prevDataList, ...parsedData]);
       }
     });
   }, [itemList]);
 
-
+  // 마이페이지 결제 완료 아이템 localhost 에서 삭제
   const DeleteList = (itemnum: string) => {
-    const MyPay = localStorage.getItem("mypayment");
+    const MyPay = localStorage.getItem('mypayment');
     if (MyPay && MyPay.includes(itemnum)) {
-      const updatedList = MyPay.replace(itemnum, "").trim();
-      localStorage.setItem("mypayment", updatedList);
+      const updatedList = MyPay.replace(itemnum, '').trim();
+      localStorage.setItem('mypayment', updatedList);
     }
     fetchData();
-  }
+  };
 
-  const onClickDelete = async (key:string) => {
+  const onClickDelete = async (key: string) => {
     Swal.fire({
       title: '정말 환불하시겠습니까?',
       text: '돌이킬 수 없습니다:(',
@@ -140,32 +147,37 @@ function MyPage() {
         const data = {
           merchant_uid: key,
         };
-        await axios.post(`/iamport/payments/cancel?_token=${accessToken}`, data)
+        await axios
+          .post(`/iamport/payments/cancel?_token=${accessToken}`, data)
           .then((res) => {
             console.log(res);
             if (res.data.code == 0) {
-             Swal.fire('주문이 취소되었습니다!', '', 'success');
+              Swal.fire('주문이 취소되었습니다!', '', 'success');
               DeleteList(key);
             } else {
-              console.log(res.status);
+              console.log(res.data.message);
+              window.localStorage.removeItem('mypayment');
+              setMydataList([]);
             }
           });
+      } else {
+        Swal.fire('환불이 취소되었습니다.', '', 'info');
       }
     });
-  }
+  };
 
-  const getDate = function(param:any){
+  const getDate = function (param: any) {
     const date = new Date(param * 1000);
-    const koreaTime = date.toLocaleString("ko-KR", { 
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      });
+    const koreaTime = date.toLocaleString('ko-KR', {
+      timeZone: 'Asia/Seoul',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
     return koreaTime;
-  }
+  };
 
-  const formatter = new Intl.NumberFormat("ko-KR");
+  const formatter = new Intl.NumberFormat('ko-KR');
 
   return (
     <>
@@ -174,7 +186,7 @@ function MyPage() {
           <div className="LeftContainer">
             <Category />
           </div>
-        
+
           <div className="RightContainer">
             <div className="orderText">구매 내역</div>
             <div className="orderContainer">
@@ -201,10 +213,14 @@ function MyPage() {
                         </span>
                       </div>
                       <span className="orderList-priceBox">
-                      {formatter.format(item.price)}원
+                        {formatter.format(item.price)}원
                       </span>
                       <div className="Buy-ButtonBox">
-                      <button onClick={() => onClickDelete(item.merchant_uid)}>x</button>
+                        <button
+                          onClick={() => onClickDelete(item.merchant_uid)}
+                        >
+                          x
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -234,7 +250,9 @@ function MyPage() {
                           {item.product_name}
                         </span>
                       </div>
-                      <span className="RentList-priceBox">{formatter.format(item.price)}원</span>
+                      <span className="RentList-priceBox">
+                        {formatter.format(item.price)}원
+                      </span>
                       <div className="Rent-ButtonBox">
                         <button
                           onClick={() => onClickDelete(item.merchant_uid)}
