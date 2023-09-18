@@ -70,7 +70,7 @@ function Login() {
             <div className="formBox">
               <div className="formBox-inner">
                 <input
-                  placeholder="이메일을 입력하세요"
+                  placeholder="testt@gmail.com"
                   autoComplete="off"
                   type="text"
                   {...register('email', {
@@ -81,7 +81,7 @@ function Login() {
 
               <div className="formBox-inner">
                 <input
-                  placeholder="비밀번호를 입력하세요"
+                  placeholder="123456789"
                   autoComplete="off"
                   type="password"
                   {...register('password', {
