@@ -8,7 +8,6 @@ import PrivatePage from './privateRoute';
 import DetailPage from '@/Components/Views/DetailPage/DetailPage';
 import UserInfo from '@/Components/Views/MyPage/UserInfo';
 import SearchPage from '@/Components/Views/SearchPage/SearchPage';
-import './route.scss';
 import { Suspense } from 'react';
 import { Routes, BrowserRouter, Route, Outlet } from 'react-router-dom';
 import LoadingSpin from '@/Common/Loading/loadingSpinner';
@@ -42,15 +41,15 @@ function RoutesPage() {
               <Route path="/search/:keyword" element={<SearchPage />} />
               <Route
                 path="/cart"
-                element={<PrivatePage component={<CartPage />} status={''} />}
+                element={<PrivatePage component={<CartPage />} />}
               />
               <Route
                 path="/mypage"
-                element={<PrivatePage component={<MyPage />} status={''} />}
+                element={<PrivatePage component={<MyPage />} />}
               />
               <Route
                 path="/mypage/userinfo"
-                element={<PrivatePage component={<UserInfo />} status={''} />}
+                element={<PrivatePage component={<UserInfo />} />}
               />
             </Route>
           </Routes>
