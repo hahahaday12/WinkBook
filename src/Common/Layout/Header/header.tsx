@@ -36,9 +36,9 @@ function Header() {
   const logoutHandler = () => {
     LogoutForm()
     .then(() => {
-    setToken("");
-    Swal.fire('로그아웃 되었습니다!', '다음에 또 만나요!', 'success');
-    navigate('/');
+      setToken("");
+      Swal.fire('로그아웃 되었습니다!', '다음에 또 만나요!', 'success');
+      navigate('/');
     })
     .catch((error) => {
       console.log('Logout failed:', error);
@@ -51,8 +51,6 @@ function Header() {
     });
   };
 
-  //const token = localStorage.getItem("token")
-  // 처음에 token 값을 가져오고, 이미지가 등록되지 않았으면 설정된 이미지 노출
   useEffect(() => {
     console.log(token);
     const authenticate = async () => {
@@ -97,7 +95,7 @@ function Header() {
       ),
       []
     )
-  )
+  );
 
   const privatelinks = tokenLinks.map(
     useCallback(
@@ -111,7 +109,7 @@ function Header() {
       ),
       []
     )
-  )
+  );
 
   return (
   <>
