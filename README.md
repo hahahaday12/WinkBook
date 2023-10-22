@@ -76,7 +76,7 @@ $ npm run dev
 
 | **관리자 페이지 (상품 관리)** | **관리자 페이지 (상품등록 관리)** |
 | :--------------------------------------------: | :--------------------------------------------: | 
-| <img src="https://github.com/KDT1-FE/KDT5-M5/assets/101441685/0c3af749-03ab-4495-9569-ac23563ef0db" width=520px alt="관리자페이지 상품관리" /> | <img src="https://github.com/hahahaday12/WinkBook/assets/101441685/72c3b7f6-ee7e-49f3-b74e-46107f70076e" width=500px alt="사용자 관리" />
+| <img src="https://github.com/KDT1-FE/KDT5-M5/assets/101441685/0c3af749-03ab-4495-9569-ac23563ef0db" width=520px alt="관리자페이지 상품관리" /> | <img src="https://github.com/hahahaday12/WinkBook/assets/101441685/165f17c5-f16d-443f-973c-0ea375296bdc" width=500px alt="사용자 관리" />
 
 | **관리자 페이지 (회원정보 관리)** | **관리자 페이지 (구매정보 관리)** |
 | :--------------------------------------------: | :--------------------------------------------: | 
