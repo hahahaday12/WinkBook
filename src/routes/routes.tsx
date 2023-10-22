@@ -4,7 +4,6 @@ import Join from '@/Common/Form/Signup/signup';
 import Login from '@/Common/Form/Signin/signin';
 import CartPage from '@/Components/Views/CartPage/CartPage';
 import MyPage from '@/Components/Views/MyPage/MyPage';
-import PrivatePage from './privateRoute';
 import DetailPage from '@/Components/Views/DetailPage/DetailPage';
 import UserInfo from '@/Components/Views/MyPage/UserInfo';
 import SearchPage from '@/Components/Views/SearchPage/SearchPage';
@@ -12,6 +11,7 @@ import { Suspense } from 'react';
 import { Routes, BrowserRouter, Route, Outlet } from 'react-router-dom';
 import LoadingSpin from '@/Common/Loading/loadingSpinner';
 import React from 'react';
+import PrivateRoute from './privateRoute';
 
 const Layout = () => {
   return (
@@ -33,7 +33,7 @@ function RoutesPage() {
       <BrowserRouter>
         <Suspense fallback={<LoadingSpin />}>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            {/* <Route path="/" element={<Layout />}>
               <Route index element={<MainPage />} />
               <Route path="/join" element={<Join />} />
               <Route path="/login" element={<Login />} />
@@ -50,6 +50,37 @@ function RoutesPage() {
               <Route
                 path="/mypage/userinfo"
                 element={<PrivatePage component={<UserInfo />} />}
+              />
+            </Route> */}
+            <Route path="/" element={<Layout />}>
+              <Route index element={<MainPage />} />
+              <Route path="/join" element={<Join />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/detail/:productNo" element={<DetailPage />} />
+              <Route path="/search/:keyword" element={<SearchPage />} />
+              <Route
+                path="/cart"
+                element={
+                  <PrivateRoute
+                    component={<CartPage />}
+                  />
+                }
+              />
+              <Route
+                path="/mypage"
+                element={
+                  <PrivateRoute
+                    component={<MyPage />}
+                  />
+                }
+              />
+              <Route
+                path="/mypage/userinfo"
+                element={
+                  <PrivateRoute
+                    component={<UserInfo />}
+                  />
+                }
               />
             </Route>
           </Routes>
