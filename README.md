@@ -243,7 +243,7 @@ PageSpeed Insights에서 이미지를 변환하는 방식에 WenP, AVIF 의 형�
 #### 구현코드<br/>
 <img width="421" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/1f6559b5-f855-4e4e-92b3-6ae2d85f023d"><br/>
 
--> <b> useParams 훅을 사용하여 현재 경로의 파라미터 값을 가져오고, 해당 값으로 productNo 변수를 초기화 하여 getDetails함수 에서 productNo값을 활용하여  해당 상품에 대한 세부 정보를 가져오게끔 구현하였습니다. </b> <br/>
+-> <b> useParams 를 사용해 URL에서 productNo 매개변수를 추출하고, 해당 매개변수를 활용하여  상세페이지 getDetails API에 함수 에서 해당 상품에 대한 세부 정보를 가져오게끔 구현 하였습니다.</b> <br/>
 #### 구현코드
 <img width="475" alt="image" src="https://github.com/hahahaday12/WinkBook/assets/101441685/35522ea4-00ad-4659-b5aa-0e21f1c90006">
 
