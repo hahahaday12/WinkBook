@@ -1,30 +1,29 @@
-import { useState } from "react";
-import "./UserInfo.scss";
-import { InfoToken } from "@/Apis/register";
-import Category from "./common/components/Category";
-import Swal from "sweetalert2";
+import { useState } from 'react';
+import './UserInfo.scss';
+import { InfoToken } from '@/Apis/register';
+import Category from './common/components/Category';
+import Swal from 'sweetalert2';
 
 function UserInfo() {
-  const [displayName, setDisplayName] = useState("");
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  const [displayName, setDisplayName] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   async function submit(e: any) {
     e.preventDefault();
     try {
       if (!displayName || !selectedImage || !oldPassword || !newPassword) {
-        alert("모든 필드를 입력해주세요.");
+        alert('모든 필드를 입력해주세요.');
         return;
       }
 
       await InfoToken(displayName, selectedImage, oldPassword, newPassword);
-      Swal.fire("수정 완료!", "", "success");
+      Swal.fire('수정 완료!', '', 'success');
       window.location.reload();
-    
     } catch (err) {
-      console.error("error");
-      Swal.fire("수정 실패!", "", "error");
+      console.error('error');
+      Swal.fire('수정 실패!', '', 'error');
       window.location.reload();
     }
   }
@@ -37,7 +36,7 @@ function UserInfo() {
       const maxSizeInBytes = 1 * 1024 * 1024;
 
       if (fileSizeInBytes > maxSizeInBytes) {
-        alert("파일 용량은 1MB를 초과할 수 없습니다.");
+        alert('파일 용량은 1MB를 초과할 수 없습니다.');
         return;
       }
 
@@ -121,17 +120,19 @@ function UserInfo() {
                             />
                           </label>
                         </div>
-                        <span className="fileMB">파일 용량은 1MB를 초과할 수 없습니다.</span>
-                      
+                        <span className="fileMB">
+                          파일 용량은 1MB를 초과할 수 없습니다.
+                        </span>
+
                         <div className="preview-container">
-                            {selectedImage ? (
-                              <img src={selectedImage} alt="Preview" />
-                            ) : (
-                              <span>이미지 미리보기</span>
-                            )}
+                          {selectedImage ? (
+                            <img src={selectedImage} alt="Preview" />
+                          ) : (
+                            <span>이미지 미리보기</span>
+                          )}
                         </div>
-                      </div>  
-                      
+                      </div>
+
                       <div className="infoList">
                         <div className="infoItem">
                           <button className="infoFix" type="submit">
@@ -143,10 +144,6 @@ function UserInfo() {
                   </form>
                 </div>
               </div>
-            
-            
-            
-            
             </div>
           </div>
         </div>
