@@ -1,9 +1,9 @@
-import "./CartPage.scss";
-import { useState, useEffect } from "react";
-import CartItems from "./CartItems/CartItems";
-import RentalItems from "./CartRent/CartRent";
-import Payment from "./Payment/Payment";
-import Swal from "sweetalert2";
+import './CartPage.scss';
+import { useState, useEffect } from 'react';
+import CartItems from './CartItems/CartItems';
+import RentalItems from './CartRent/CartRent';
+import Payment from './Payment/Payment';
+import Swal from 'sweetalert2';
 
 interface BuyItem {
   id: number;
@@ -21,7 +21,7 @@ function CartPage() {
   const [buyItem, setbuyItem] = useState<BuyItem[]>([]);
 
   useEffect(() => {
-    const cartData = localStorage.getItem("cart");
+    const cartData = localStorage.getItem('cart');
     const buyItems = cartData ? JSON.parse(cartData) : [];
     setbuyItem(buyItems);
   }, []);
@@ -50,7 +50,7 @@ function CartPage() {
       );
       setSelectedItem(remainingItems);
     }
-    // Reset filteredItems indices if unchecked
+    
     const updatedCheckedItems = checkedValue
       ? filteredItems.map((_, index) => index)
       : [];
@@ -83,9 +83,9 @@ function CartPage() {
     setTotal(0);
     let total = 0;
     if (Array.isArray(selectedItem)) {
-      selectedItem.forEach((item:any) => {
-        const itemPrice= parseInt(item.price);
-        if (!isNaN(itemPrice)) {    
+      selectedItem.forEach((item: any) => {
+        const itemPrice = parseInt(item.price);
+        if (!isNaN(itemPrice)) {
           total += itemPrice;
         }
       });
@@ -98,35 +98,35 @@ function CartPage() {
 
   const RemoveBuyItem = (key: any) => {
     Swal.fire({
-      title: "정말 삭제하시겠습니까?",
-      text: "",
-      icon: "warning",
+      title: '정말 삭제하시겠습니까?',
+      text: '',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#df307f",
-      cancelButtonColor: "#e24457",
-      confirmButtonText: "네",
-      cancelButtonText: "아니오",
+      confirmButtonColor: '#df307f',
+      cancelButtonColor: '#e24457',
+      confirmButtonText: '네',
+      cancelButtonText: '아니오',
     }).then((result) => {
       if (result.isConfirmed) {
-        const cartDataString = localStorage.getItem("cart");
+        const cartDataString = localStorage.getItem('cart');
 
         if (cartDataString !== null) {
           const updatedCartData: BuyItem[] = JSON.parse(cartDataString);
           const datalist = JSON.stringify(
             updatedCartData.filter((item) => item.product_no !== key)
           );
-          localStorage.setItem("cart", datalist);
+          localStorage.setItem('cart', datalist);
           setbuyItem(JSON.parse(datalist));
-          Swal.fire("삭제되었습니다!", "", "success");
+          Swal.fire('삭제되었습니다!', '', 'success');
         } else {
-          console.log("cart data not found");
+          console.log('cart data not found');
         }
       } else {
-        Swal.fire("취소되었습니다!!", "", "success");
+        Swal.fire('취소되었습니다.', '', 'success');
       }
     });
   };
-  const formatter = new Intl.NumberFormat("ko-KR");
+  const formatter = new Intl.NumberFormat('ko-KR');
 
   return (
     <>
