@@ -93,7 +93,7 @@ const Payment = ({ amount, productlists, setdatalist }: PaymentInfo) => {
   };
 
   function callback(response: TextType) {
-    const { success, error_msg } = response;
+    const { success } = response;
 
     if (success) {
       Swal.fire('결제 성공!', '', 'success').then(() => {
@@ -117,8 +117,7 @@ const Payment = ({ amount, productlists, setdatalist }: PaymentInfo) => {
 
         navigate('/mypage')
       }); 
-    } else {
-      
+    } else {  
       Swal.fire(`결제 실패 되었습니다! 다시 확인해주세요.`, '', 'error');
     }
   }
