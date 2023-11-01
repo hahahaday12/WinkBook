@@ -21,8 +21,8 @@ function Login() {
   } = useForm<IForm>({
     mode: 'onSubmit',
     defaultValues: {
-      email: '',
-      password: '',
+      email: 'testt@gmail.com',
+      password: '123456789',
     },
   });
 
@@ -70,7 +70,7 @@ function Login() {
             <div className="formBox">
               <div className="formBox-inner">
                 <input
-                  placeholder="testt@gmail.com"
+                  placeholder="아이디 입력"
                   autoComplete="off"
                   type="text"
                   {...register('email', {
@@ -81,7 +81,7 @@ function Login() {
 
               <div className="formBox-inner">
                 <input
-                  placeholder="123456789"
+                  placeholder="비밀번호 입력"
                   autoComplete="off"
                   type="password"
                   {...register('password', {
