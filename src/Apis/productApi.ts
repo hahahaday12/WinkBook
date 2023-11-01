@@ -1,30 +1,24 @@
 import axios from 'axios';
+import { cafeInstance } from './axios';
 
-const { VITE_CLIENT_ID, VITE_IMP_KEY, VITE_IMP_SECRET } = import.meta.env;
-
-const ajax = axios.create({
-  baseURL: '/cafe24',
-  headers: {
-    'Content-Type': 'application/json',
-    'X-Cafe24-Api-Version': '2023-03-01',
-    'X-Cafe24-Client-Id': VITE_CLIENT_ID,
-  },
-});
+const { VITE_IMP_KEY, VITE_IMP_SECRET } = import.meta.env;
 
 interface GetList {
   category?: number;
   product_no?: string;
   limit?: number;
 }
+
 export async function getList(info: GetList) {
+  const { category, product_no, limit } = info;
   try {
-    const { data } = await ajax.get('/products', {
+    const { data } = await cafeInstance.get('/products', {
       params: {
         display: 'T',
         selling: 'T',
-        category: info.category,
-        product_no: info.product_no,
-        limit: info.limit
+        category,
+        product_no,
+        limit,
       },
     });
     return data.products;
@@ -35,7 +29,7 @@ export async function getList(info: GetList) {
 
 export async function getRecommand() {
   try {
-    const res = await ajax.get('/mains/2/products');
+    const res = await cafeInstance.get('/mains/2/products');
     return res.data;
   } catch (err) {
     console.log(err);
@@ -44,16 +38,16 @@ export async function getRecommand() {
 
 export async function getDetail(product_no: string) {
   try {
-    const res = await ajax.get(`/products/${product_no}`);
+    const res = await cafeInstance.get(`/products/${product_no}`);
     return res.data;
   } catch (err) {
     console.log(err);
   }
 }
 
-export const MypageToken = async  () => {
-
-  const response = await axios.post('/iamport/users/getToken',
+export const ImportToken = async () => {
+  const response = await axios.post(
+    '/iamport/users/getToken',
     {
       imp_key: VITE_IMP_KEY,
       imp_secret: VITE_IMP_SECRET,
@@ -63,5 +57,22 @@ export const MypageToken = async  () => {
     }
   );
   const accessToken = response.data.response.access_token;
-  return accessToken;  
-}
+  return accessToken;
+};
+
+export const canceltoken = async (accessToken: string) => {
+  const res = await axios.get(
+    `/iamport/payments/status/paid?limit=100&sorting=paid&_token=${accessToken}`
+  );
+  return res.data;
+};
+
+//  const GetToken = async () => {
+//    try {
+//      const accessToken = await ImportToken();
+//      return accessToken;
+//    } catch (error) {
+//      console.log(error);
+//      throw error;
+//    }
+//  };
