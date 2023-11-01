@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import Category from './common/components/Category';
-import { MypageToken } from '@/Apis/productApi';
+import { canceltoken, ImportToken } from '@/Apis/productApi';
 import './MyPage.scss';
 import Swal from 'sweetalert2';
 
@@ -40,16 +40,6 @@ function MyPage() {
   const [itemList, setItemList] = useState<PaymentItem[]>([]);
   const [mydataList, setMydataList] = useState<PageData[]>([]);
 
-  const GetToken = async () => {
-    try {
-      const accessToken = await MypageToken();
-      return accessToken;
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  };
-
   const fetchData = async (): Promise<void> => {
     setMydataList([]);
     try {
@@ -57,11 +47,9 @@ function MyPage() {
 
       if (paynumber) {
         const merchantUids = JSON.parse(paynumber);
-        const accessToken = await GetToken();
+        const accessToken = await ImportToken();
         const paymentsResponse: AxiosResponse<PaymentsResponse> =
-          await axios.get(
-            `/iamport/payments/status/paid?limit=100&sorting=paid&_token=${accessToken}`
-          );
+          await canceltoken(accessToken);
 
         if (
           paymentsResponse.data &&
@@ -98,18 +86,9 @@ function MyPage() {
       return;
     }
 
-    const checkJson = function (str: string) {
-      try {
-        JSON.parse(str);
-      } catch (error) {
-        return false;
-      }
-      return true;
-    };
-
     const useData = itemList.filter((item) => item.custom_data);
     useData.forEach((item) => {
-      if (checkJson(item.custom_data)) {
+      if (item.custom_data) {
         let parsedData: PageData[] = JSON.parse(item.custom_data);
         parsedData = parsedData.map((data) => ({
           ...data,
@@ -143,7 +122,7 @@ function MyPage() {
       cancelButtonText: '아니오',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const accessToken = await GetToken();
+        const accessToken = await ImportToken();
         const data = {
           merchant_uid: key,
         };
