@@ -4,21 +4,24 @@ import CartItems from './CartItems/CartItems';
 import RentalItems from './CartRent/CartRent';
 import Payment from './Payment/Payment';
 import Swal from 'sweetalert2';
+import useCheckButton from './CheckButton/CheckCommon';
 
-interface BuyItem {
+export type Item = {
   id: number;
   product_name: string;
   price: number;
   detail_image: string;
-  product_no: number;
-}
+  product_no: string;
+  gubun: string;
+  rentdate: string;
+};
 
 function CartPage() {
+  const { selectedItem, checkOne, checkTwo } = useCheckButton();
   const [CartItemsValue] = useState<number[]>([]);
-  const [selectedItem, setSelectedItem] = useState<BuyItem[]>([]);
   const [Total, setTotal] = useState(0);
   const [ShowTotal, setShowTotal] = useState(false);
-  const [buyItem, setbuyItem] = useState<BuyItem[]>([]);
+  const [buyItem, setbuyItem] = useState<Item[]>([]);
 
   useEffect(() => {
     const cartData = localStorage.getItem('cart');
@@ -30,61 +33,12 @@ function CartPage() {
     calculateTotal();
   }, [selectedItem]);
 
-  const checkOne = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    buyItem: any[],
-    gubun: string
-  ) => {
-    const checkedValue = event.target.checked;
-    const filteredItems = buyItem.filter((item) => item.gubun === gubun);
-
-    if (checkedValue) {
-      const combinedItems = new Set([...selectedItem, ...filteredItems]);
-      setSelectedItem(Array.from(combinedItems));
-    } else {
-      const remainingItems = selectedItem.filter(
-        (item) =>
-          !filteredItems.some(
-            (filteredItem) => filteredItem.product_no === item.product_no
-          )
-      );
-      setSelectedItem(remainingItems);
-    }
-    
-    const updatedCheckedItems = checkedValue
-      ? filteredItems.map((_, index) => index)
-      : [];
-
-    return updatedCheckedItems;
-  };
-
-  const checkTwo = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checkedItems: number[],
-    el: any
-  ) => {
-    const itemId = parseInt(event.target.name);
-    let updatedCheckedItems: number[] = [];
-    let updatedItems: any[] = [];
-    if (event.target.checked) {
-      updatedCheckedItems = [...checkedItems, itemId];
-      updatedItems = [...selectedItem, el];
-    } else {
-      updatedCheckedItems = checkedItems.filter((id) => id !== itemId);
-      updatedItems = selectedItem.filter(
-        (item) => item.product_no !== el.product_no
-      );
-    }
-    setSelectedItem(updatedItems);
-    return updatedCheckedItems;
-  };
-
   const calculateTotal = () => {
     setTotal(0);
     let total = 0;
     if (Array.isArray(selectedItem)) {
-      selectedItem.forEach((item: any) => {
-        const itemPrice = parseInt(item.price);
+      selectedItem.forEach((item: Item) => {
+        const itemPrice = parseInt(String(item.price));
         if (!isNaN(itemPrice)) {
           total += itemPrice;
         }
@@ -96,7 +50,7 @@ function CartPage() {
     setShowTotal(true);
   };
 
-  const RemoveBuyItem = (key: any) => {
+  const RemoveBuyItem = (key: string) => {
     Swal.fire({
       title: '정말 삭제하시겠습니까?',
       text: '',
@@ -111,7 +65,7 @@ function CartPage() {
         const cartDataString = localStorage.getItem('cart');
 
         if (cartDataString !== null) {
-          const updatedCartData: BuyItem[] = JSON.parse(cartDataString);
+          const updatedCartData: Item[] = JSON.parse(cartDataString);
           const datalist = JSON.stringify(
             updatedCartData.filter((item) => item.product_no !== key)
           );
