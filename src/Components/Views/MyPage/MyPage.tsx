@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import Category from './common/components/Category';
-import { canceltoken, ImportToken } from '@/Apis/productApi';
+import { ImportToken } from '@/Apis/productApi';
 import './MyPage.scss';
 import Swal from 'sweetalert2';
 
@@ -18,7 +18,6 @@ interface PaymentsResponse {
 interface CategoryMap {
   readonly [key: string]: string;
 }
-
 interface PageData {
   gubun: string;
   merchant_uid: string;
@@ -36,7 +35,6 @@ function MyPage() {
     price: '상품가격',
     cancel: '구매취소',
   } as const;
-
   const [itemList, setItemList] = useState<PaymentItem[]>([]);
   const [mydataList, setMydataList] = useState<PageData[]>([]);
 
@@ -49,7 +47,9 @@ function MyPage() {
         const merchantUids = JSON.parse(paynumber);
         const accessToken = await ImportToken();
         const paymentsResponse: AxiosResponse<PaymentsResponse> =
-          await canceltoken(accessToken);
+          await axios.get(
+            `/iamport/payments/status/paid?limit=100&sorting=paid&_token=${accessToken}`
+          );
 
         if (
           paymentsResponse.data &&
@@ -60,7 +60,6 @@ function MyPage() {
             paymentsResponse.data.response.list.filter((item) =>
               merchantUids.includes(item.merchant_uid)
             );
-
           if (filteredList) {
             setItemList(filteredList);
           } else {
@@ -85,7 +84,6 @@ function MyPage() {
     if (itemList.length === 0) {
       return;
     }
-
     const useData = itemList.filter((item) => item.custom_data);
     useData.forEach((item) => {
       if (item.custom_data) {
@@ -145,8 +143,8 @@ function MyPage() {
     });
   };
 
-  const getDate = function (param: any) {
-    const date = new Date(param * 1000);
+  const getDate = function (param: string) {
+    const date = new Date(Number(param) * 1000);
     const koreaTime = date.toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul',
       year: 'numeric',
@@ -157,7 +155,6 @@ function MyPage() {
   };
 
   const formatter = new Intl.NumberFormat('ko-KR');
-
   return (
     <>
       <div className="MyPage-AllLayout">
@@ -165,7 +162,6 @@ function MyPage() {
           <div className="LeftContainer">
             <Category />
           </div>
-
           <div className="RightContainer">
             <div className="orderText">구매 내역</div>
             <div className="orderContainer">

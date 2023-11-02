@@ -13,7 +13,11 @@ export type Item = {
   detail_image: string;
   product_no: string;
   gubun: string;
-  rentdate: string;
+  rentdate: number;
+  list_image: string;
+  summary_description: string;
+  product_tag: string;
+  retail_price: number;
 };
 
 function CartPage() {

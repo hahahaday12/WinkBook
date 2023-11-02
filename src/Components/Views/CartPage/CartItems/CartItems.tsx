@@ -1,28 +1,31 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import DeleteButton from "@/Components/Button/CartDeletebutton";
-import "./CartItems.scss";
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import DeleteButton from '@/Components/Button/CartDeletebutton';
+import './CartItems.scss';
+import { Item } from '../CartPage';
 
-interface BuyItem {
-  id: number;
-  gubun: string;
-  product_name: string;
-  price: number;
-  detail_image: string;
-  product_no: number;
-  buyItem:number;
-}
+export type CheckOneFunction = (
+  event: React.ChangeEvent<HTMLInputElement>,
+  buyItem: Item[],
+  gubun: string
+) => number[];
 
-interface CartItemsProps {
+export type CheckTwoFunction = (
+  event: React.ChangeEvent<HTMLInputElement>,
+  prevCheckedItems: number[],
+  el: Item
+) => number[];
+
+export type CartItemsProps = {
   check: number[];
-  delete: (key: any) => void;
-  datalist: any;
-  checkOne: any;
-  checkTwo: any;
-}
+  delete: (key: string) => void;
+  datalist: Item[];
+  checkOne: CheckOneFunction;
+  checkTwo: CheckTwoFunction;
+};
 
 const CartItems = ({
   check,
@@ -31,36 +34,38 @@ const CartItems = ({
   checkOne,
   checkTwo,
 }: CartItemsProps) => {
-  const [buyItem, setbuyItem] = useState<BuyItem[]>([]);
+  const [buyItem, setbuyItem] = useState<Item[]>([]);
   const [checkedItems, setCheckedItems] = useState<number[]>(check);
   const [allCheck, setallCheck] = useState(false);
- 
+
   useEffect(() => {
     setbuyItem(datalist);
   }, [datalist]);
 
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if(event.target.checked){
-      setCheckedItems(checkOne(event, buyItem, "buy"));
+    if (event.target.checked) {
+      setCheckedItems(checkOne(event, buyItem, 'buy'));
       setallCheck(true);
-   }else{
-      setCheckedItems(checkOne(event, buyItem, "buy"));
+    } else {
+      setCheckedItems(checkOne(event, buyItem, 'buy'));
       setallCheck(false);
     }
   };
 
   const handleChange2 =
-    (el: any) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setCheckedItems(checkTwo(event, checkedItems, el));
+    (el: Item) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setCheckedItems((prevCheckedItems) =>
+        checkTwo(event, prevCheckedItems, el)
+      );
     };
 
-  const children = (el: any, index: number) => (
+  const children = (el: Item, index: number) => (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         ml: 3,
-        fontSize: "large",
+        fontSize: 'large',
       }}
     >
       <FormControlLabel
@@ -76,7 +81,7 @@ const CartItems = ({
     </Box>
   );
 
-  const formatter = new Intl.NumberFormat("ko-KR");
+  const formatter = new Intl.NumberFormat('ko-KR');
 
   return (
     <>
@@ -93,7 +98,7 @@ const CartItems = ({
                   checkedItems.length < buyItem.length
                 }
                 onChange={handleChange1}
-                style={{marginTop:"8px"}}
+                style={{ marginTop: '8px' }}
               />
             </div>
           }
@@ -114,7 +119,7 @@ const CartItems = ({
 
       <div className="ItemsContainer">
         {buyItem
-          .filter((el) => el.gubun === "buy")
+          .filter((el: Item) => el.gubun === 'buy')
           .map((el, index) => (
             <div className="ItemContainer" key={index}>
               <div className="CheckContainer">{children(el, index)}</div>
@@ -131,7 +136,6 @@ const CartItems = ({
 
               <div className="CartButtonBox">
                 <DeleteButton onDelete={() => RemoveBuyItem(el.product_no)} />
-                {/* <DeleteButtonLogic productNo={el.product_no.toString()} /> */}
               </div>
             </div>
           ))}

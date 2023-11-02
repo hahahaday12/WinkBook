@@ -10,7 +10,7 @@ function UserInfo() {
   const [newPassword, setNewPassword] = useState('');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  async function submit(e: any) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
     try {
       if (!displayName || !selectedImage || !oldPassword || !newPassword) {

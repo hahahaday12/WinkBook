@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { getRecommand, getList } from "@/Apis/productApi";
-import "./Recommand.scss";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { getRecommand, getList } from '@/Apis/productApi';
+import './Recommand.scss';
+import { Link } from 'react-router-dom';
 
 type RecommandProducts = RecommandProduct[];
 
@@ -16,18 +16,18 @@ interface RecommandProduct {
 
 export default function Recommand() {
   const [list, setList] = useState<RecommandProducts>();
-
   async function recommand() {
     try {
       const res = await getRecommand();
       setList(res.products);
-      const productList = res.products.map((obj:any) => obj.product_no).join(",");
+      const productList = res.products
+        .map((obj: RecommandProduct) => obj.product_no)
+        .join(',');
       return productList;
     } catch (err) {
       console.log(err);
     }
   }
-
   async function getItem() {
     const productList = await recommand();
     const data = await getList({ product_no: productList });
